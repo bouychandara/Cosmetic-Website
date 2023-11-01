@@ -1,0 +1,126 @@
+
+/* *{
+    margin: 0%;
+    padding: 0%;
+    list-style-type: none;
+    box-sizing: border-box;
+}
+.navbar{
+    display: flex;
+}
+.icons{
+    float: right;
+    width: 100%;
+    background-color: #D6BCA7;
+    text-align: right;  
+    font-size: 32px;
+}
+.search-bar{
+    float: left;
+    width: 100%;
+    background-color: #D6BCA7;
+    display: flex;
+    justify-content: center;
+    text-align: right;
+    padding: 30px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+.menu-bar{
+    width: 100%;
+    background-color:#B39476;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.menu-bar ul li a{
+    display: block;
+    padding: 40px;
+    color: white;
+    font-size: larger;
+     
+}
+.menu-box{
+    width:80%;
+    height: 1500px;
+    background-color: aqua;;
+    margin:0 10% ;
+}
+footer{
+    width:100%;
+    height: 350px;
+    background-color: blue;
+} */
+.main-navbar{
+    border-bottom: 1px solid #ccc;
+}
+.main-navbar .top-navbar{
+    background-color: #B39476;
+    padding-top: 6px;
+    padding-bottom: 6px;
+}
+.main-navbar .top-navbar .brand-name{
+    color: #fff;
+}
+.main-navbar .top-navbar .nav-link{
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+}
+.main-navbar .top-navbar .dropdown-menu{
+    padding: 0px 0px;
+    border-radius: 4px;
+    background-color: #B39476;
+}
+.main-navbar .top-navbar .dropdown-menu .dropdown-item{
+    padding: 8px 16px;
+    /* border-bottom: 1px solid #B39476; */
+    font-size: 14px;
+    color: #fff;
+    border-radius: 4px;
+}
+.main-navbar .top-navbar .dropdown-menu .dropdown-item i{
+    width: 20px;
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+.main-navbar .top-navbar .dropdown-menu .dropdown-item:hover{
+    background-color: #D6BCA7;
+}
+.main-navbar .navbar{
+    padding: 0px;
+    background-color: #D6BCA7;
+    display: flex;
+}
+.main-navbar .navbar .nav-item .nav-link{
+    padding: 8px 20px;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+.me-auto{
+    margin: 0 auto !important;
+}
+.container-fluid{
+    max-width: 90%;
+}
+footer{
+    background-color: #B39476;
+    position: sticky;
+    margin-bottom: 0 !important;
+    bottom: 0 !important;
+}
+.footer{
+    background-color: #B39476;
+}
+
+@media only screen and (max-width: 600px) {
+    .main-navbar .top-navbar .nav-link{
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
