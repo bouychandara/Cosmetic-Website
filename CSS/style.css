@@ -115,6 +115,7 @@
     position: absolute;
     z-index: 20;
     top:60px;
+    right: 0;
 }
 
 .menus-box-container > ul{

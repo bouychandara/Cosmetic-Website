@@ -1,4 +1,4 @@
-const renderMenu = new function(){
+(function(){
     const self = document.getElementById('_menu_container');
     let html = '',
     moreMenu = '';
@@ -27,7 +27,7 @@ const renderMenu = new function(){
     }).catch(error => {
         console.error('Error:', error);
     });
-}();
+})();
 
 const displayMenuBox = (div) => {
     const moreBtn = div.querySelector('#_menu_ct_box1'),
