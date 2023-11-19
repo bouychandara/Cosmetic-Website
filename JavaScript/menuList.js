@@ -6,10 +6,10 @@ const renderMenu = new function(){
     fetch('../Json/menu.json').then(res => res.json()).then(d => {
         d && d.forEach((mn,i) => {
             if(i<7){
-                html += `<li>${mn.name ? mn.name : ''}</li>`;
+                html += `<li class="product-click" data-brand="${mn.brand ? mn.brand : 'dior'}">${mn.name ? mn.name : ''}</li>`;
             }
             else{
-                moreMenu += `<li>${mn.name ? mn.name : ''}</li>`;
+                moreMenu += `<li class="product-click" data-brand="${mn.brand ? mn.brand : 'dior'}">${mn.name ? mn.name : ''}</li>`;
             }
         });
 
@@ -23,6 +23,7 @@ const renderMenu = new function(){
         }
         self.innerHTML = `<ul>${html}</ul>`;
         displayMenuBox(self);
+        setClickEvent(self);
     }).catch(error => {
         console.error('Error:', error);
     });
@@ -41,4 +42,20 @@ const displayMenuBox = (div) => {
             menuBox.style.display = 'none';
         }
     }
+}
+
+const setClickEvent = (div) => {
+    const menuList = div.querySelectorAll('.product-click');
+    menuList.forEach(menu => {
+        menu.onclick = function(e){
+            e.preventDefault();
+            fetch('../Json/brand.json').then(res => res.json()).then(d => {
+                const data = d[this.dataset.brand];
+                renderBrandList(data);
+            }).catch(error => {
+                console.log('Error: ',error);
+            });
+        }
+    });
+    menuList[0].dispatchEvent(new Event('click'));
 }
