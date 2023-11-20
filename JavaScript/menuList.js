@@ -6,7 +6,7 @@
     fetch('../Json/menu.json').then(res => res.json()).then(d => {
         d && d.forEach((mn,i) => {
             if(i<7){
-                html += `<li class="product-click" data-brand="${mn.brand ? mn.brand : 'dior'}">${mn.name ? mn.name : ''}</li>`;
+                html += `<li class="product-click" data-category="${mn.brand ? mn.brand : 'dior'}">${mn.name ? mn.name : ''}</li>`;
             }
             else{
                 moreMenu += `<li class="product-click" data-brand="${mn.brand ? mn.brand : 'dior'}">${mn.name ? mn.name : ''}</li>`;
@@ -50,7 +50,7 @@ const setClickEvent = (div) => {
         menu.onclick = function(e){
             e.preventDefault();
             fetch('../Json/brand.json').then(res => res.json()).then(d => {
-                const data = d[this.dataset.brand];
+                const data = d[this.dataset.category];
                 renderBrandList(data);
             }).catch(error => {
                 console.log('Error: ',error);
