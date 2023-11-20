@@ -9,7 +9,7 @@
                 html += `<li class="product-click" data-category="${mn.brand ? mn.brand : 'dior'}">${mn.name ? mn.name : ''}</li>`;
             }
             else{
-                moreMenu += `<li class="product-click" data-brand="${mn.brand ? mn.brand : 'dior'}">${mn.name ? mn.name : ''}</li>`;
+                moreMenu += `<li class="product-click" data-category="${mn.brand ? mn.brand : 'dior'}">${mn.name ? mn.name : ''}</li>`;
             }
         });
 
