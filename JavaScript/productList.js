@@ -52,3 +52,8 @@ const renderProductList = (div,d) => {
     });
     div.innerHTML = html;
 }
+
+const viewProductDetail = (div,d) => {
+    const html = ``;
+    div.innerHTML = html;
+}
