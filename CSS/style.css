@@ -194,6 +194,12 @@
     -webkit-box-orient: vertical;
 }
 
+.product-details-view{
+    width:80%;
+    height:150px;
+    background-color:#ff0000;
+}
+
 /*These class you use as bootstrap*/
 .input-group-text{
     background-color:#fff;

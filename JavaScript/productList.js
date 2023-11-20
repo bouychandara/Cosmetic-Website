@@ -38,7 +38,7 @@ const renderProductList = (div,d) => {
     const baseUrl = window.location.origin;
     let html = '';
     (d || []).forEach(product => {
-        html += `<div class="card-product">
+        html += `<div class="card-product product-view-details">
             <div class="w-100">
                 <img class="product-show" src="${baseUrl}/${product.image_url}" alt=""/>
             </div>
@@ -51,9 +51,22 @@ const renderProductList = (div,d) => {
         </div>`;
     });
     div.innerHTML = html;
+    setClickEventProductListView(div);
+}
+
+const setClickEventProductListView = (div) => {
+    const productViewList = div.querySelectorAll('.product-view-details');
+    productViewList.forEach(productView => {
+        productView.onclick = function(e){
+            e.preventDefault();
+            fetch('../Json/productDetails.json').then(res => res.json()).then(d => {
+                console.log(d);
+            });
+        }
+    });
 }
 
 const viewProductDetail = (div,d) => {
-    const html = ``;
+    const html = `<div class="product-details-view"></div>`;
     div.innerHTML = html;
 }
