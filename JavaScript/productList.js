@@ -101,5 +101,5 @@ const viewProductDetail = (div,d) => {
         if(i === d.image_list.length) i = 0;
         containerSlider.innerHTML = `<img class="w-100 h-100" src="${baseUrl+'/'+d.image_list[i]}" alt="product-slider"/>`;
         i++;
-    },550);
+    },1000);
 }
