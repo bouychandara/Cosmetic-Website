@@ -38,7 +38,7 @@ const renderProductList = (div,d) => {
     const baseUrl = window.location.origin;
     let html = '';
     (d || []).forEach(product => {
-        html += `<div class="card-product product-view-details">
+        html += `<div class="card-product product-view-details" data-id="${product.id || 0}">
             <div class="w-100">
                 <img class="product-show" src="${baseUrl}/${product.image_url}" alt=""/>
             </div>
@@ -60,13 +60,44 @@ const setClickEventProductListView = (div) => {
         productView.onclick = function(e){
             e.preventDefault();
             fetch('../Json/productDetails.json').then(res => res.json()).then(d => {
-                console.log(d);
+                const data = d.find(p => {
+                    if(p.id === this.dataset.id)
+                        return p;
+                });
+                viewProductDetail(div,data);
             });
         }
     });
 }
 
 const viewProductDetail = (div,d) => {
-    const html = `<div class="product-details-view"></div>`;
+    const baseUrl = document.location.origin;
+    const html = `<div class="product-details-view">
+        <div class="product-slider w-50 h-100"></div>
+        <div class="w-50">
+            <p class="fw-bold fs-5">${d.title || ''}</p>
+            <p class="ps-3 mt-3">${d.descriptions || ''}</p>
+            <p class="fw-bold mt-3">Price: ${d.price || 0}</p>
+            <div class="d-flex gap-2 mt-3">
+                <div class="d-flex gap-1 align-items-center">
+                    <button class="btn-decrement">
+                        <i class="fa-solid fa-minus fs-5"></i>
+                    <button>
+                    <p class="show-product-amount">1</p>
+                    <button class="btn-increment">
+                        <i class="fa-solid fa-plus fs-5"></i>
+                    </button>
+                </div>
+                <div></div>
+            </div>
+        </div>
+    </div>`;
     div.innerHTML = html;
+    const containerSlider = div.querySelector('.product-slider');
+    let i = 0;
+    setInterval(() => {
+        if(i === d.image_list.length) i = 0;
+        containerSlider.innerHTML = `<img class="w-100 h-100" src="${baseUrl+'/'+d.image_list[i]}" alt="product-slider"/>`;
+        i++;
+    },550);
 }

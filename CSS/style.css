@@ -195,9 +195,62 @@
 }
 
 .product-details-view{
+    display: flex;
     width:80%;
-    height:150px;
+    height:250px;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-sm);
+}
+
+.product-details-view > div:last-child{
+    padding: 1rem;
+    background-color: #b3b3b323;
+    border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+}
+
+.product-slider img{
+    border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
+}
+
+.btn-decrement{
+    width:60px;
+    height:30px;
+    background-color:#fff;
+    border:1px solid #80808091;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-increment{
+    width:60px;
+    height:30px;
+    background-color: #fff;
+    border: 1px solid #80808091;
+    cursor: pointer;
+    outline: none;
+}
+
+.btn-decrement:hover{
     background-color:#ff0000;
+    color:#fff;
+}
+
+.btn-increment:hover{
+    background-color:#008000;
+    color:#fff;
+}
+
+.show-product-amount{
+    height:30px;
+    width:150px;
+    border:1px solid #0000006e;
+    outline:none;
+    background-color:#fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding:0;
+    margin: 0;
+    line-height: 30px;
 }
 
 /*These class you use as bootstrap*/
@@ -227,6 +280,10 @@
     color:#fff;
 }
 
+.fw-bold{
+    font-weight: bold;
+}
+
 .fs-5{
     font-size:1.25rem;
 }
@@ -249,6 +306,10 @@
 
 .w-100{
     width:100%;
+}
+
+.h-100{
+    height:100%;
 }
 
 .w-75{
@@ -292,6 +353,10 @@
     gap:0.5rem;
 }
 
+.gap-1{
+    gap:0.25rem;
+}
+
 .mt-3{
     margin-top:1rem;
 }
@@ -302,6 +367,14 @@
 
 .mt-1{
     margin-top:0.25rem;
+}
+
+.ps-2{
+    padding-left:0.5rem;
+}
+
+.ps-3{
+    padding-left:1rem;
 }
 
 .bg-white{

@@ -1,11 +1,13 @@
 {
     "dior":[
         {
+            "id":"1",
             "image_url":"/Images/productImage/product_test.jpg",
             "title":"sdfghk",
             "price":"646.45$"
         },
         {
+            "id":"2",
             "image_url":"/Images/productImage/product_test.jpg",
             "title":"sdfghk",
             "price":"646.45$"

@@ -1,6 +1,16 @@
 [
     {
         "id":"1",
+        "image_list": [
+            "/Images/productImage/test.avif",
+            "/Images/productImage/product_test.jpg"
+        ],
+        "title":"dfghjkl",
+        "descriptions":"dfghjkl;",
+        "price":"366$"
+    },
+    {
+        "id":"2",
         "image_list": [],
         "title":"dfghjkl",
         "descriptions":"dfghjkl;",
