@@ -78,7 +78,7 @@ const viewProductDetail = (div,d) => {
             <p class="fw-bold fs-5">${d.title || ''}</p>
             <p class="ps-3 mt-3">${d.descriptions || ''}</p>
             <p class="fw-bold mt-3">Price: ${d.price || 0}</p>
-            <div class="d-flex gap-2 mt-3">
+            <div class="d-flex align-items-center gap-2 mt-3">
                 <div class="d-flex gap-1 align-items-center">
                     <button class="btn-decrement">
                         <i class="fa-solid fa-minus fs-5"></i>
@@ -88,7 +88,9 @@ const viewProductDetail = (div,d) => {
                         <i class="fa-solid fa-plus fs-5"></i>
                     </button>
                 </div>
-                <div></div>
+                <div class="d-block">
+                    <button>Get Product</button>
+                </div>
             </div>
         </div>
     </div>`;
