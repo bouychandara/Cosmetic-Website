@@ -47,9 +47,16 @@ const displayMenuBox = (div) => {
 
 const setClickEvent = (div) => {
     const menuList = div.querySelectorAll('.product-click');
+    let previousElement = null;
     menuList.forEach(menu => {
         menu.onclick = function(e){
             e.preventDefault();
+            if(previousElement){
+                previousElement.classList.remove('active');
+            }
+            this.classList.add('active');
+            previousElement = this;
+            
             fetch('../Json/brand.json').then(res => res.json()).then(d => {
                 const data = d[this.dataset.category];
                 renderBrandList(data);

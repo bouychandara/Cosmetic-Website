@@ -107,7 +107,9 @@ const viewProductDetail = (div,d) => {
     let i = 0;
     setInterval(() => {
         if(i === d.image_list.length) i = 0;
-        containerSlider.innerHTML = `<img class="w-100 h-100" src="${baseUrl+'/'+d.image_list[i] || ''}" alt="product-slider"/>`;
+        if(d.image_list && d.image_list[0]){
+            containerSlider.innerHTML = `<img class="w-100 h-100" src="${baseUrl+'/'+d.image_list[i] || ''}" alt="product-slider"/>`;
+        }
         i++;
     },5000);
     setBookingProduct(div);

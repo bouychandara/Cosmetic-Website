@@ -92,10 +92,8 @@
     cursor:pointer;
 }
 
-.menus-list > ul > li:first-child,
-.menus-list > ul > li:hover,
-.menus-list > ul > li:focus,
-.menus-list > ul > li:active{
+.menus-list > ul > li.active,
+.menus-list > ul > li:hover{
     background-color:#2f87eb;
     color:#fff;
     vertical-align: middle;
