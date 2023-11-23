@@ -156,10 +156,6 @@
 }
 
 .brand-product-list{
-    display:flex;
-    gap:1rem;
-    flex-wrap: wrap;
-    justify-content: space-around;
     position: relative;
     padding:1rem;
     z-index: 5;
@@ -219,6 +215,7 @@
     border:1px solid #80808091;
     cursor: pointer;
     outline: none;
+    border-radius:5px;
 }
 
 .btn-increment{
@@ -228,15 +225,16 @@
     border: 1px solid #80808091;
     cursor: pointer;
     outline: none;
+    border-radius: 5px;
 }
 
 .btn-decrement:hover{
-    background-color:#ff0000;
+    background-color:#ff3434;
     color:#fff;
 }
 
 .btn-increment:hover{
-    background-color:#008000;
+    background-color:#2fe72f;
     color:#fff;
 }
 
@@ -251,6 +249,22 @@
     padding:0;
     margin: 0;
     line-height: 30px;
+}
+
+.btn-get-product{
+    border:none;
+    outline:none;
+    padding:0.567rem;
+    background-color:#2f87eb;
+    border-radius: var(--border-radius-lg);
+    color:#fff;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.brand-section{
+    border-bottom: 2px solid #ff0000;
+    margin-bottom: 10px;
 }
 
 /*These class you use as bootstrap*/
@@ -329,6 +343,10 @@
     display: -webkit-flex;
 }
 
+.flex-wrap{
+    flex-wrap: wrap;
+}
+
 .align-items-center{
     align-items:center;
 }
@@ -369,6 +387,10 @@
     margin-top:0.25rem;
 }
 
+.mb-3{
+    margin-bottom: 1rem;
+}
+
 .ps-2{
     padding-left:0.5rem;
 }
@@ -383,4 +405,12 @@
 
 .position-relative{
     position: relative;
+}
+
+.text-capitalize{
+    text-transform: capitalize;
+}
+
+.justify-content-between{
+    justify-content: space-between;
 }

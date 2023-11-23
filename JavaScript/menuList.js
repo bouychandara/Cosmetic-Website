@@ -6,10 +6,10 @@
     fetch('../Json/menu.json').then(res => res.json()).then(d => {
         d && d.forEach((mn,i) => {
             if(i<7){
-                html += `<li class="product-click" data-category="${mn.brand ? mn.brand : 'dior'}">${mn.name ? mn.name : ''}</li>`;
+                html += `<li class="product-click fs-5" data-category="${mn.category || 'dior'}">${mn.name ? mn.name : ''}</li>`;
             }
             else{
-                moreMenu += `<li class="product-click" data-category="${mn.brand ? mn.brand : 'dior'}">${mn.name ? mn.name : ''}</li>`;
+                moreMenu += `<li class="product-click fs-5" data-category="${mn.category || 'dior'}">${mn.name || ''}</li>`;
             }
         });
 
@@ -22,7 +22,8 @@
             </li>`;
         }
         self.innerHTML = `<ul>${html}</ul>`;
-        displayMenuBox(self);
+        if(moreMenu)
+            displayMenuBox(self);
         setClickEvent(self);
     }).catch(error => {
         console.error('Error:', error);

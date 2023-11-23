@@ -1,63 +1,18 @@
 [
     {
         "name":"Home",
-        "brand":"dior"
+        "category":"all"
     },
     {
-        "name":"Skin Care"
+        "name":"Cosmectic",
+        "category":"cosmectic"
     },
     {
-        "name":"Home"
+        "name":"MakeUp",
+        "category":"makeup"
     },
     {
-        "name":"Skin Care"
-    },
-    {
-        "name":"Home"
-    },
-    {
-        "name":"Skin Care"
-    },
-    {
-        "name":"Home"
-    },
-    {
-        "name":"Skin Care"
-    },
-    {
-        "name":"Home"
-    },
-    {
-        "name":"Skin Care"
-    },
-    {
-        "name":"Home"
-    },
-    {
-        "name":"Skin Care"
-    },
-    {
-        "name":"Home"
-    },
-    {
-        "name":"Skin Care"
-    },
-    {
-        "name":"Home"
-    },
-    {
-        "name":"Skin Care"
-    },
-    {
-        "name":"Home"
-    },
-    {
-        "name":"Skin Care"
-    },
-    {
-        "name":"Home"
-    },
-    {
-        "name":"Skin Care"
+        "name":"Skin Care",
+        "category":"skin_care"
     }
 ]

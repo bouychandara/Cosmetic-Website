@@ -3,18 +3,24 @@ const renderBrandList = (d) => {
     self = document.getElementById('_main_container');
     let html = '';
 
-    (d || []).forEach(brand => {
-        html += `<div class="card-product product-details" data-brand="${brand.brand ? brand.brand : 'dior'}">
-            <div class="w-100">
-                <img class="product-show" src="${baseUrl}/${brand.image_url}" alt=""/>
-            </div>
-            <div class="w-100 px-2 mt-1">
-                <p class="text-dark limit-line">${brand.title}</p>
-            </div>
-            <div class="w-100 px-2 mt-2">
-                <p class="text-dark fs-5">Price: ${brand.price}</p>
-            </div>
-        </div>`;
+    (Object.keys(d) || []).forEach(brand => {
+        html += `<div class="brand-section">
+            <p class="text-capitalize fs-5 fw-bold">${brand.replace(/\_|\-/g,' ')}</p>
+        </div><div class="d-flex flex-wrap gap-2 justify-content-between mb-3">`;
+        (d[brand] || []).forEach(pr => {
+            html += `<div class="card-product product-details" data-brand="${pr.brand || 'dior'}">
+                <div class="w-100">
+                    <img class="product-show" src="${baseUrl}/${pr.image_url || ''}" alt=""/>
+                </div>
+                <div class="w-100 px-2 mt-1">
+                    <p class="text-dark limit-line">${pr.title || ''}</p>
+                </div>
+                <div class="w-100 px-2 mt-2">
+                    <p class="text-dark fs-5">Price: ${pr.price || ''}</p>
+                </div>
+            </div>`;
+        });
+        html += `</div>`;
     });
 
     self.innerHTML = html;
@@ -50,7 +56,7 @@ const renderProductList = (div,d) => {
             </div>
         </div>`;
     });
-    div.innerHTML = html;
+    div.innerHTML = `<div class="d-flex flex-wrap gap-2 justify-content-between">${html}</div>`;
     setClickEventProductListView(div);
 }
 
@@ -73,12 +79,14 @@ const setClickEventProductListView = (div) => {
 const viewProductDetail = (div,d) => {
     const baseUrl = document.location.origin;
     const html = `<div class="product-details-view">
-        <div class="product-slider w-50 h-100"></div>
+        <div class="product-slider w-50 h-100">
+            <img class="w-100 h-100" src="${baseUrl+'/'+d.image_list[0] || ''}" alt="product-slider"/>
+        </div>
         <div class="w-50">
             <p class="fw-bold fs-5">${d.title || ''}</p>
             <p class="ps-3 mt-3">${d.descriptions || ''}</p>
             <p class="fw-bold mt-3">Price: ${d.price || 0}</p>
-            <div class="d-flex align-items-center gap-2 mt-3">
+            <div class="d-flex align-items-center gap-2 mt-3 flex-wrap">
                 <div class="d-flex gap-1 align-items-center">
                     <button class="btn-decrement">
                         <i class="fa-solid fa-minus fs-5"></i>
@@ -89,7 +97,7 @@ const viewProductDetail = (div,d) => {
                     </button>
                 </div>
                 <div class="d-block">
-                    <button>Get Product</button>
+                    <button class="btn-get-product">Get Product</button>
                 </div>
             </div>
         </div>
@@ -99,7 +107,36 @@ const viewProductDetail = (div,d) => {
     let i = 0;
     setInterval(() => {
         if(i === d.image_list.length) i = 0;
-        containerSlider.innerHTML = `<img class="w-100 h-100" src="${baseUrl+'/'+d.image_list[i]}" alt="product-slider"/>`;
+        containerSlider.innerHTML = `<img class="w-100 h-100" src="${baseUrl+'/'+d.image_list[i] || ''}" alt="product-slider"/>`;
         i++;
-    },1000);
+    },5000);
+    setBookingProduct(div);
+}
+
+const setBookingProduct = (div) => {
+    const btnDecrement = div.querySelector('.btn-decrement'),
+    btnIncrement = div.querySelector('.btn-increment'),
+    productBooked = div.querySelector('.show-product-amount');
+
+    btnDecrement.onclick = function(e){
+        e.preventDefault();
+        let value = parseInt(productBooked.textContent);
+        if(value > 1){
+            productBooked.textContent = parseInt(productBooked.textContent) - 1;
+        }
+        else{
+            productBooked.textContent = 1;
+        }
+    }
+
+    btnIncrement.onclick = function(e){
+        e.preventDefault();
+        let value = parseInt(productBooked.textContent);
+        if(value >= 1){
+            productBooked.textContent = parseInt(productBooked.textContent) + 1;
+        }
+        else{
+            productBooked.textContent = 1;
+        }
+    }
 }
