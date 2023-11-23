@@ -265,6 +265,19 @@
     margin-bottom: 10px;
 }
 
+.slider-list{
+    height:250px;
+    width:100%;
+    padding: 0 3px;
+    z-index: 15;
+}
+
+.slider-list > img{
+    object-fit: cover;
+    background-repeat: no-repeat;
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+}
+
 /*These class you use as bootstrap*/
 .input-group-text{
     background-color:#fff;
