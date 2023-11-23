@@ -273,7 +273,7 @@
 }
 
 .slider-list > img{
-    object-fit: cover;
+    object-fit: fill;
     background-repeat: no-repeat;
     border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
 }
