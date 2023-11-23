@@ -78,26 +78,28 @@ const setClickEventProductListView = (div) => {
 
 const viewProductDetail = (div,d) => {
     const baseUrl = document.location.origin;
-    const html = `<div class="product-details-view">
-        <div class="product-slider w-50 h-100">
-            <img class="w-100 h-100" src="${baseUrl+'/'+d.image_list[0] || ''}" alt="product-slider"/>
-        </div>
-        <div class="w-50">
-            <p class="fw-bold fs-5">${d.title || ''}</p>
-            <p class="ps-3 mt-3">${d.descriptions || ''}</p>
-            <p class="fw-bold mt-3">Price: ${d.price || 0}</p>
-            <div class="d-flex align-items-center gap-2 mt-3 flex-wrap">
-                <div class="d-flex gap-1 align-items-center">
-                    <button class="btn-decrement">
-                        <i class="fa-solid fa-minus fs-5"></i>
-                    <button>
-                    <p class="show-product-amount">1</p>
-                    <button class="btn-increment">
-                        <i class="fa-solid fa-plus fs-5"></i>
-                    </button>
-                </div>
-                <div class="d-block">
-                    <button class="btn-get-product">Get Product</button>
+    const html = `<div class="d-flex justify-content-center">
+        <div class="product-details-view">
+            <div class="product-slider w-50 h-100">
+                <img class="w-100 h-100" src="${baseUrl+'/'+d.image_list[0] || ''}" alt="product-slider"/>
+            </div>
+            <div class="w-50">
+                <p class="fw-bold fs-5">${d.title || ''}</p>
+                <p class="ps-3 mt-3">${d.descriptions || ''}</p>
+                <p class="fw-bold mt-3">Price: ${d.price || 0}</p>
+                <div class="d-flex align-items-center gap-2 mt-3 flex-wrap">
+                    <div class="d-flex gap-1 align-items-center">
+                        <button class="btn-decrement">
+                            <i class="fa-solid fa-minus fs-5"></i>
+                        </button>
+                        <p class="show-product-amount">1</p>
+                        <button class="btn-increment">
+                            <i class="fa-solid fa-plus fs-5"></i>
+                        </button>
+                    </div>
+                    <div class="d-block">
+                        <button class="btn-get-product">Get Product</button>
+                    </div>
                 </div>
             </div>
         </div>
