@@ -8,7 +8,7 @@ const renderBrandList = (d) => {
             <p class="text-capitalize fs-5 fw-bold">${brand.replace(/\_|\-/g,' ')}</p>
         </div><div class="d-flex flex-wrap gap-2 justify-content-between mb-3">`;
         (d[brand] || []).forEach(pr => {
-            html += `<div class="card-product product-details" data-brand="${pr.brand || 'dior'}">
+            html += `<div class="card-product product-details" data-id="${pr.id || 0}">
                 <div class="w-100">
                     <img class="product-show" src="${baseUrl}/${pr.image_url || ''}" alt=""/>
                 </div>
@@ -24,7 +24,7 @@ const renderBrandList = (d) => {
     });
 
     self.innerHTML = html;
-    setClickEventProductList(self);
+    setClickEventProductListView(self);
 }
 
 const setClickEventProductList = (div) => {
@@ -61,7 +61,7 @@ const renderProductList = (div,d) => {
 }
 
 const setClickEventProductListView = (div) => {
-    const productViewList = div.querySelectorAll('.product-view-details');
+    const productViewList = div.querySelectorAll('.product-details');
     productViewList.forEach(productView => {
         productView.onclick = function(e){
             e.preventDefault();
@@ -114,6 +114,7 @@ const viewProductDetail = (div,d) => {
         }
         i++;
     },5000);
+    renderRelatedProduct(div,d.relate);
     setBookingProduct(div);
 }
 

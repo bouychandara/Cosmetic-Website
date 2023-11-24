@@ -247,6 +247,7 @@
     padding:0;
     margin: 0;
     line-height: 30px;
+    text-align:center;
 }
 
 .btn-get-product{
@@ -269,7 +270,6 @@
     height:250px;
     width:100%;
     padding: 0 3px;
-    z-index: 15;
 }
 
 .slider-list > img{

@@ -6,14 +6,41 @@
             "/Images/productImage/product_test.jpg"
         ],
         "title":"dfghjkl",
-        "descriptions":"dfghjkl;",
-        "price":"366$"
+        "descriptions":"dfghjklsdfghjkdfhgdjhfjehj",
+        "price":"366$",
+        "relate":"perfume"
     },
     {
         "id":"2",
-        "image_list": [],
+        "image_list": [
+            "/Images/productImage/test.avif",
+            "/Images/productImage/product_test.jpg"
+        ],
         "title":"dfghjkl",
         "descriptions":"dfghjkl;",
-        "price":"366$"
+        "price":"366$",
+        "relate":"perfume"
+    },
+    {
+        "id":"3",
+        "image_list": [
+            "/Images/productImage/test.avif",
+            "/Images/productImage/product_test.jpg"
+        ],
+        "title":"dfghjkl",
+        "descriptions":"dfghjkl;",
+        "price":"$366",
+        "relate":"perfume"
+    },
+    {
+        "id":"4",
+        "image_list": [
+            "/Images/productImage/test.avif",
+            "/Images/productImage/product_test.jpg"
+        ],
+        "title":"dfghjkl",
+        "descriptions":"dfghjkl;",
+        "price":"$366",
+        "relate":"perfume"
     }
 ]

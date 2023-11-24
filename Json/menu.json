@@ -14,5 +14,9 @@
     {
         "name":"Skin Care",
         "category":"skin_care"
+    },
+    {
+        "name":"Body Care",
+        "category":"body_care"
     }
 ]
