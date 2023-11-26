@@ -251,6 +251,12 @@
     outline:none;
     background-color:transparent;
     padding:0.3rem 0.5rem;
-    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
     border-bottom: none;
+}
+
+.btn-active{
+    background-color:var(--bs-pink);
+    color:#fff;
+    border:none;
+    outline:none;
 }

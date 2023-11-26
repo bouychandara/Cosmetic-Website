@@ -39,31 +39,87 @@ const modelDialog = () => {
     if(previousModel){
         previousModel.remove();
     }
-    const modal = `<div id="${modalId}" class="modal fade">
+    const modalHtml = `<div id="${modalId}" class="modal fade">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
-                <div class="modal-header border-bottom-0">
-                    <div class="d-flex gap-2 flex-nowrap">
-                        <button class="btn-tab btn-active">Login</button>
-                        <button class="btn-tab">Register</button>
+                <div class="modal-header p-0">
+                    <div class="d-flex flex-nowrap">
+                        <button class="btn-tab" data-purpose="login">Login</button>
+                        <button class="btn-tab" data-purpose="register">Register</button>
                     </div>
-                    <button class="btn-close" aria-label="close" data-bs-dismiss="modal"></button>
+                    <button class="btn-close me-2" aria-label="close" data-bs-dismiss="modal"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="d-flex gap-2">
-                        <p></p>
-                    </div>
-                </div>
+                <div class="modal-body"></div>
             </div>
         </div>
     </div>`;
-    document.body.insertAdjacentHTML("afterbegin",modal);
+    document.body.insertAdjacentHTML("afterbegin",modalHtml);
     new bootstrap.Modal(`#${modalId}`,{
         backdrop: 'static'
     }).show();
-    document.getElementById(modalId).addEventListener('hidden.bs.modal',function(){
+    const modal = document.getElementById(modalId);
+    modal.addEventListener('hidden.bs.modal',function(){
         this.remove();
         document.body.removeAttribute('class');
         document.body.removeAttribute('style');
     });
+    renderModelBody(modal);
+}
+
+const renderModelBody = (modal) => {
+    const modalBody = modal.querySelector('.modal-body'),
+    tabList = modal.querySelectorAll('.btn-tab');
+    let html = '',
+    previousClick = null;
+
+    tabList.forEach(tab => {
+        tab.onclick = function(){
+            if(previousClick)
+                previousClick.classList.remove('btn-active');
+            tab.classList.add('btn-active');
+            previousClick = this;
+            switch(tab.dataset.purpose){
+                case 'login':
+                    html = `<form class="d-flex gap-3 flex-column" method="POST" autocomplete="off" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="login_name" class="form-label">Username</label>
+                            <div class="input-group flex-nowrap">
+                                <div class="input-group-text">
+                                    <i class="fa-regular fa-envelope fs-5"></i>
+                                </div>
+                                <input type="text" class="form-control data-input" name="login_name"/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <div class="input-group flex-nowrap">
+                                <div class="input-group-text">
+                                    <i class="fa-solid fa-key fs-5"></i>
+                                </div>
+                                <input type="password" class="form-control data-input" name="password"/>
+                            </div>
+                        </div>
+                        <div class="d-grid mt-3">
+                            <button class="btn btn-sm btn-primary" type="button">Login</button>
+                        </div>
+                    </form>`;
+                    modalBody.innerHTML = html;
+                    break;
+                case 'register':
+                    html = `<form class="d-flex gap-3 flex-column" method="POST" autocomplete="off" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="first_name" class="form-label">First Name</label>
+                            <div class="input-group flex-nowrap">
+                                <div class="input-group-text"></div>
+                            </div>
+                        </div>
+                    </form>`;
+                    modalBody.innerHTML = html;
+                    break;
+                default:
+                    break;
+            }
+        }
+    });
+    tabList[0].dispatchEvent(new Event('click'));
 }
