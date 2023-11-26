@@ -6,7 +6,7 @@ const renderBrandList = (d) => {
     (Object.keys(d) || []).forEach(brand => {
         html += `<div class="brand-section">
             <p class="text-capitalize fs-5 fw-bold">${brand.replace(/\_|\-/g,' ')}</p>
-        </div><div class="d-flex flex-wrap gap-2 justify-content-between mb-3">`;
+        </div><div class="d-flex flex-wrap gap-2 justify-content-around mb-3">`;
         (d[brand] || []).forEach(pr => {
             html += `<div class="card-product product-details" data-id="${pr.id || 1}">
                 <div class="w-100">
@@ -83,7 +83,19 @@ const viewProductDetail = (div,d) => {
     const html = `<div class="d-flex justify-content-center">
         <div class="product-details-view">
             <div class="product-slider w-50 h-100">
-                <img class="w-100 h-100" src="${baseUrl+'/'+d.image_list[0] || ''}" alt="product-slider"/>
+                <img class="product-image w-100 h-100" src="${baseUrl+d.image_list[0] || ''}" alt="product-slider"/>
+                <div class="d-flex justify-content-between position-absolute w-100 h-100 z-1 top-0">
+                    <div class="d-flex align-items-center h-100 ps-2">
+                        <div class="btn-slider-decrement d-flex align-items-center justify-content-center p-3 rounded-circle border border-1" role="button">
+                            <i class="fa-solid fa-chevron-left fs-5 fw-bold text-white"></i>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center h-100 pe-2">
+                        <div class="btn-slider-increment d-flex align-items-center justify-content-center p-3 rounded-circle border border-1" role="button">
+                            <i class="fa-solid fa-chevron-right fs-5 fw-bold text-white"></i>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="w-50">
                 <p class="fw-bold fs-5">${d.title || ''}</p>
@@ -112,12 +124,62 @@ const viewProductDetail = (div,d) => {
     setInterval(() => {
         if(i === d.image_list.length) i = 0;
         if(d.image_list && d.image_list[0]){
-            containerSlider.innerHTML = `<img class="w-100 h-100" src="${baseUrl+'/'+d.image_list[i] || ''}" alt="product-slider"/>`;
+            containerSlider.innerHTML = `<img class="product-image w-100 h-100" src="${baseUrl+d.image_list[i] || ''}" alt="product-slider"/>
+            <div class="d-flex justify-content-between position-absolute w-100 h-100 z-1 top-0">
+                <div class="d-flex align-items-center h-100 ps-2">
+                    <div class="btn-slider-decrement d-flex align-items-center justify-content-center p-3 rounded-circle border border-1" role="button">
+                        <i class="fa-solid fa-chevron-left fs-5 fw-bold text-white"></i>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center h-100 pe-2">
+                    <div class="btn-slider-increment d-flex align-items-center justify-content-center p-3 rounded-circle border border-1" role="button">
+                        <i class="fa-solid fa-chevron-right fs-5 fw-bold text-white"></i>
+                    </div>
+                </div>
+            </div>`;
         }
         i++;
+        i = viewProductImage(i,d.image_list.length,div.firstChild,d.image_list);
     },5000);
     renderRelatedProduct(div,d.relate);
     setBookingProduct(div);
+    i = viewProductImage(i,d.image_list.length,div.firstChild,d.image_list);
+}
+
+const viewProductImage = (index,length,div,d=[]) => {
+    const baseUrl = window.location.origin;
+    const btnDecrement = div.querySelector('.btn-slider-decrement'),
+    btnIncrement = div.querySelector('.btn-slider-increment'),
+    imageElement = div.querySelector('.product-image');
+
+    btnDecrement.onclick = function(e){
+        e.preventDefault();
+        if(index > 0){
+            index--;
+            if(imageElement)
+                imageElement.src = (baseUrl+d[index]);
+        }
+        else{
+            index = (length-1);
+            if(imageElement)
+                imageElement.src = (baseUrl+d[index]);
+        }
+    }
+
+    btnIncrement.onclick = function(e){
+        e.preventDefault();
+        if(index < (length-1)){
+            index++;
+            if(imageElement)
+                imageElement.src = (baseUrl+d[index]);
+        }
+        else{
+            index = 0;
+            if(imageElement)
+                imageElement.src = (baseUrl+d[index]);
+        }
+    }
+    return index;
 }
 
 const setBookingProduct = (div) => {

@@ -12,6 +12,11 @@
     box-sizing: border-box;
 }
 
+body{
+    overflow-x: hidden;
+    position: relative;
+}
+
 .height-top-sticky{
     height:60px;
     background-color:#9852afe3;
@@ -31,7 +36,7 @@
 }
 
 .height-bottom-sticky{
-    height:180px;
+    min-height:180px;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -161,7 +166,8 @@
 
 .card-product{
     width:calc(100%/3);
-    max-width:250px;
+    min-width:250px;
+    max-width:260px;
     background-color:#ededed;
     border-radius: var(--border-radius-lg);
     font-family: 'Poppins';
@@ -208,6 +214,10 @@
     padding: 1rem;
     background-color: #b3b3b323;
     border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+}
+
+.product-slider{
+    position: relative;
 }
 
 .product-slider img{
@@ -272,7 +282,6 @@
 }
 
 .set-bg-text-slider{
-    background-color:#f5f5f56c;
     border:none;
     outline:none;
     border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
