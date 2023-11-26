@@ -152,31 +152,35 @@ const viewProductImage = (index,length,div,d=[]) => {
     btnIncrement = div.querySelector('.btn-slider-increment'),
     imageElement = div.querySelector('.product-image');
 
-    btnDecrement.onclick = function(e){
-        e.preventDefault();
-        if(index > 0){
-            index--;
-            if(imageElement)
-                imageElement.src = (baseUrl+d[index]);
-        }
-        else{
-            index = (length-1);
-            if(imageElement)
-                imageElement.src = (baseUrl+d[index]);
+    if(btnDecrement){
+        btnDecrement.onclick = function(e){
+            e.preventDefault();
+            if(index > 0){
+                index--;
+                if(imageElement)
+                    imageElement.src = (baseUrl+d[index]);
+            }
+            else{
+                index = (length-1);
+                if(imageElement)
+                    imageElement.src = (baseUrl+d[index]);
+            }
         }
     }
 
-    btnIncrement.onclick = function(e){
-        e.preventDefault();
-        if(index < (length-1)){
-            index++;
-            if(imageElement)
-                imageElement.src = (baseUrl+d[index]);
-        }
-        else{
-            index = 0;
-            if(imageElement)
-                imageElement.src = (baseUrl+d[index]);
+    if(btnIncrement){
+        btnIncrement.onclick = function(e){
+            e.preventDefault();
+            if(index < (length-1)){
+                index++;
+                if(imageElement)
+                    imageElement.src = (baseUrl+d[index]);
+            }
+            else{
+                index = 0;
+                if(imageElement)
+                    imageElement.src = (baseUrl+d[index]);
+            }
         }
     }
     return index;
