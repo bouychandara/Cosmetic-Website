@@ -44,8 +44,8 @@ const modelDialog = () => {
             <div class="modal-content">
                 <div class="modal-header p-0">
                     <div class="d-flex flex-nowrap">
-                        <button class="btn-tab" data-purpose="login">Login</button>
-                        <button class="btn-tab" data-purpose="register">Register</button>
+                        <button class="btn-tab fw-bold" data-purpose="login">Login</button>
+                        <button class="btn-tab fw-bold" data-purpose="register">Register</button>
                     </div>
                     <button class="btn-close me-2" aria-label="close" data-bs-dismiss="modal"></button>
                 </div>
@@ -100,7 +100,7 @@ const renderModelBody = (modal) => {
                             </div>
                         </div>
                         <div class="d-grid mt-3">
-                            <button class="btn btn-sm btn-primary" type="button">Login</button>
+                            <button class="btn btn-sm btn-primary fw-bold" type="button">Login</button>
                         </div>
                     </form>`;
                     modalBody.innerHTML = html;
@@ -109,9 +109,22 @@ const renderModelBody = (modal) => {
                     html = `<form class="d-flex gap-3 flex-column" method="POST" autocomplete="off" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="first_name" class="form-label">First Name</label>
-                            <div class="input-group flex-nowrap">
-                                <div class="input-group-text"></div>
-                            </div>
+                            <input type="text" class="form-control data-input" name="first_name"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="last_name" class="form-label">Last Name</label>
+                            <input type="text" class="form-control data-input" name="last_name"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control data-input" name="email"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control data-input" name="password"/>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-sm btn-success fw-bold" type="button">Register</button>
                         </div>
                     </form>`;
                     modalBody.innerHTML = html;
