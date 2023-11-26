@@ -187,6 +187,15 @@
     -webkit-box-orient: vertical;
 }
 
+.limited-description{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
 .product-details-view{
     display: flex;
     width:80%;
