@@ -8,7 +8,7 @@ const renderBrandList = (d) => {
             <p class="text-capitalize fs-5 fw-bold">${brand.replace(/\_|\-/g,' ')}</p>
         </div><div class="d-flex flex-wrap gap-2 justify-content-between mb-3">`;
         (d[brand] || []).forEach(pr => {
-            html += `<div class="card-product product-details" data-id="${pr.id || 0}">
+            html += `<div class="card-product product-details" data-id="${pr.id || 1}">
                 <div class="w-100">
                     <img class="product-show" src="${baseUrl}/${pr.image_url || ''}" alt=""/>
                 </div>
@@ -46,7 +46,7 @@ const renderProductList = (div,d) => {
     const baseUrl = window.location.origin;
     let html = '';
     (d || []).forEach(product => {
-        html += `<div class="card-product product-view-details" data-id="${product.id || 0}">
+        html += `<div class="card-product product-view-details" data-id="${product.id || 1}">
             <div class="w-100">
                 <img class="product-show" src="${baseUrl}/${product.image_url}" alt=""/>
             </div>

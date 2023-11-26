@@ -3,7 +3,8 @@
         "id":"1",
         "image_list": [
             "/Images/productImage/test.avif",
-            "/Images/productImage/product_test.jpg"
+            "/Images/productImage/product_test.jpg",
+            "/Images/productImage/test.avif"
         ],
         "title":"dfghjkl",
         "descriptions":"dfghjklsdfghjkdfhgdjhfjehj",
@@ -34,6 +35,17 @@
     },
     {
         "id":"4",
+        "image_list": [
+            "/Images/productImage/test.avif",
+            "/Images/productImage/product_test.jpg"
+        ],
+        "title":"dfghjkl",
+        "descriptions":"dfghjkl;",
+        "price":"$366",
+        "relate":"perfume"
+    },
+    {
+        "id":"5",
         "image_list": [
             "/Images/productImage/test.avif",
             "/Images/productImage/product_test.jpg"
