@@ -27,6 +27,7 @@ const renderBrandList = (d) => {
     setClickEventProductListView(self);
 }
 
+//currently, we unuse this function
 const setClickEventProductList = (div) => {
     const productDetailsList = div.querySelectorAll('.product-details');
     productDetailsList.forEach(product => {
@@ -40,6 +41,7 @@ const setClickEventProductList = (div) => {
     });
 }
 
+//currently, we unuse this function
 const renderProductList = (div,d) => {
     const baseUrl = window.location.origin;
     let html = '';
@@ -89,16 +91,16 @@ const viewProductDetail = (div,d) => {
                 <p class="fw-bold mt-3">Price: ${d.price || 0}</p>
                 <div class="d-flex align-items-center gap-2 mt-3 flex-wrap">
                     <div class="d-flex gap-1 align-items-center">
-                        <button class="btn-decrement">
+                        <button class="btn btn-sm btn-outline-danger btn-decrement">
                             <i class="fa-solid fa-minus fs-5"></i>
                         </button>
                         <p class="show-product-amount">1</p>
-                        <button class="btn-increment">
+                        <button class="btn btn-sm btn-outline-success btn-increment">
                             <i class="fa-solid fa-plus fs-5"></i>
                         </button>
                     </div>
                     <div class="d-block">
-                        <button class="btn-get-product">Get Product</button>
+                        <button class="btn btn-sm btn-primary btn-get-product">Get Product</button>
                     </div>
                 </div>
             </div>
@@ -121,7 +123,8 @@ const viewProductDetail = (div,d) => {
 const setBookingProduct = (div) => {
     const btnDecrement = div.querySelector('.btn-decrement'),
     btnIncrement = div.querySelector('.btn-increment'),
-    productBooked = div.querySelector('.show-product-amount');
+    productBooked = div.querySelector('.show-product-amount'),
+    getProduct = div.querySelector('.btn-get-product');
 
     btnDecrement.onclick = function(e){
         e.preventDefault();
@@ -143,5 +146,10 @@ const setBookingProduct = (div) => {
         else{
             productBooked.textContent = 1;
         }
+    }
+
+    getProduct.onclick = function(e){
+        e.preventDefault();
+        modelDialog();
     }
 }

@@ -1,4 +1,6 @@
 @import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css);
+@import url(../CSS/bootstrap.css);
+
 :root{
     --border-radius-lg: 0.5rem;
     --box-shadow-sm: 0 0.125rem 0.25rem #00000013;
@@ -68,8 +70,6 @@
 .menus-list{
     width:100%;
     height:60px;
-    display: flex;
-    align-items:center;
     position: sticky;
     top:60px;
     background-color:#ffcfcf;
@@ -162,7 +162,6 @@
 .card-product{
     width:calc(100%/3);
     max-width:250px;
-    height:260px;
     background-color:#ededed;
     border-radius: var(--border-radius-lg);
     font-family: 'Poppins';
@@ -206,34 +205,10 @@
     border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
 }
 
+.btn-increment,
 .btn-decrement{
     width:60px;
     height:30px;
-    background-color:#fff;
-    border:1px solid #80808091;
-    cursor: pointer;
-    outline: none;
-    border-radius:5px;
-}
-
-.btn-increment{
-    width:60px;
-    height:30px;
-    background-color: #fff;
-    border: 1px solid #80808091;
-    cursor: pointer;
-    outline: none;
-    border-radius: 5px;
-}
-
-.btn-decrement:hover{
-    background-color:#ff3434;
-    color:#fff;
-}
-
-.btn-increment:hover{
-    background-color:#2fe72f;
-    color:#fff;
 }
 
 .show-product-amount{
@@ -248,17 +223,6 @@
     margin: 0;
     line-height: 30px;
     text-align:center;
-}
-
-.btn-get-product{
-    border:none;
-    outline:none;
-    padding:0.567rem;
-    background-color:#2f87eb;
-    border-radius: var(--border-radius-lg);
-    color:#fff;
-    cursor: pointer;
-    white-space: nowrap;
 }
 
 .brand-section{
@@ -278,150 +242,15 @@
     border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
 }
 
-/*These class you use as bootstrap*/
-.input-group-text{
-    background-color:#fff;
-    height:100%;
-    padding:0.5rem;
-    border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
-    cursor: pointer;
+.set-max-width-search{
+    max-width:300px;
 }
 
-.input-group{
-    display:flex;
-    align-items:center;
-    background-color:#fff;
-    border-radius: var(--border-radius-lg);
-}
-
-.form-control{
-    padding: 0.375rem 0.75rem;
-    border:none;
+.btn-tab{
+    border:1px solid #cfcfcf;
     outline:none;
-    border-radius: var(--border-radius-lg);
-}
-
-.text-white{
-    color:#fff;
-}
-
-.fw-bold{
-    font-weight: bold;
-}
-
-.fs-5{
-    font-size:1.25rem;
-}
-
-.fs-4{
-    font-size: calc(1.275rem + 0.3vw);
-}
-
-.pe-2{
-    padding-right:0.5rem;
-}
-
-.px-3{
-    padding:0 1rem 0 1rem;
-}
-
-.px-2{
-    padding:0 0.5rem 0 0.5rem;
-}
-
-.w-100{
-    width:100%;
-}
-
-.h-100{
-    height:100%;
-}
-
-.w-75{
-    width:75%;
-}
-
-.w-50{
-    width:50%;
-}
-
-.d-block{
-    display: block;
-}
-
-.d-flex{
-    display:flex;
-    display: -webkit-flex;
-}
-
-.flex-wrap{
-    flex-wrap: wrap;
-}
-
-.align-items-center{
-    align-items:center;
-}
-
-.align-items-end{
-    align-items:flex-end;
-}
-
-.justify-content-center{
-    justify-content: center;
-}
-
-.justify-content-end{
-    justify-content: end;
-}
-
-.flex-column{
-    flex-direction: column;
-}
-
-.gap-2{
-    gap:0.5rem;
-}
-
-.gap-1{
-    gap:0.25rem;
-}
-
-.mt-3{
-    margin-top:1rem;
-}
-
-.mt-2{
-    margin-top:0.5rem;
-}
-
-.mt-1{
-    margin-top:0.25rem;
-}
-
-.mb-3{
-    margin-bottom: 1rem;
-}
-
-.ps-2{
-    padding-left:0.5rem;
-}
-
-.ps-3{
-    padding-left:1rem;
-}
-
-.bg-white{
-    background-color:#fff;
-}
-
-.position-relative{
-    position: relative;
-}
-
-.text-capitalize{
-    text-transform: capitalize;
-}
-
-.justify-content-between{
-    justify-content: space-between;
+    background-color:transparent;
+    padding:0.3rem 0.5rem;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    border-bottom: none;
 }
