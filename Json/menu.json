@@ -1,15 +1,11 @@
 [
     {
         "name":"Home",
-        "category":"all"
-    },
-    {
-        "name":"Cosmectic",
-        "category":"cosmectic"
+        "category":"home"
     },
     {
         "name":"MakeUp",
-        "category":"makeup"
+        "category":"make_up"
     },
     {
         "name":"Skin Care",

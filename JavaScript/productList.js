@@ -3,31 +3,27 @@ const renderBrandList = (d) => {
     self = document.getElementById('_main_container');
     let html = '';
 
-    (Object.keys(d) || []).forEach(brand => {
-        html += `<div class="brand-section">
-            <p class="text-capitalize fs-5 fw-bold">${brand.replace(/\_|\-/g,' ')}</p>
-        </div><div class="d-flex flex-wrap gap-2 justify-content-around mb-3">`;
-        (d[brand] || []).forEach(pr => {
-            html += `<div class="card-product product-details" data-id="${pr.id || 1}">
-                <div class="w-100">
-                    <img class="product-show" src="${baseUrl}/${pr.image_url || ''}" alt=""/>
-                </div>
-                <div class="w-100 px-2 mt-1">
-                    <p class="text-dark limit-line">${pr.title || ''}</p>
-                </div>
-                <div class="w-100 px-2 mt-2">
-                    <p class="text-dark fs-5">Price: ${pr.price || ''}</p>
-                </div>
-            </div>`;
-        });
-        html += `</div>`;
+    (d || []).forEach(brand => {
+        html += `<div class="card-product product-details" data-brand="${brand.brand || 'dior'}">
+            <div class="w-100">
+                <img class="product-show" src="${baseUrl+brand.image_url || ''}" alt=""/>
+            </div>
+            <div class="w-100 px-2 mt-1">
+                <p class="text-dark limit-line">${brand.title || ''}</p>
+            </div>
+            <div class="w-100 px-2 mt-2">
+                <p class="text-dark fs-5">Price: ${brand.price || ''}</p>
+            </div>
+        </div>`;
     });
+    html = `<div class="d-flex flex-wrap gap-2 justify-content-around mb-3">${html}</div>`;
 
     self.innerHTML = html;
-    setClickEventProductListView(self);
+    const previousDiv = self.previousElementSibling;
+    previousDiv.style.display = 'block';
+    setClickEventProductList(self);
 }
 
-//currently, we unuse this function
 const setClickEventProductList = (div) => {
     const productDetailsList = div.querySelectorAll('.product-details');
     productDetailsList.forEach(product => {
@@ -41,14 +37,15 @@ const setClickEventProductList = (div) => {
     });
 }
 
-//currently, we unuse this function
 const renderProductList = (div,d) => {
+    const previousDiv = div.previousElementSibling;
+    previousDiv.style.display = 'block';
     const baseUrl = window.location.origin;
     let html = '';
     (d || []).forEach(product => {
         html += `<div class="card-product product-view-details" data-id="${product.id || 1}">
             <div class="w-100">
-                <img class="product-show" src="${baseUrl}/${product.image_url}" alt=""/>
+                <img class="product-show" src="${baseUrl+product.image_url}" alt=""/>
             </div>
             <div class="w-100 px-2 mt-1">
                 <p class="text-dark limit-line">${product.title}</p>
@@ -58,12 +55,12 @@ const renderProductList = (div,d) => {
             </div>
         </div>`;
     });
-    div.innerHTML = `<div class="d-flex flex-wrap gap-2 justify-content-between">${html}</div>`;
+    div.innerHTML = `<div class="d-flex flex-wrap gap-2 justify-content-around">${html}</div>`;
     setClickEventProductListView(div);
 }
 
 const setClickEventProductListView = (div) => {
-    const productViewList = div.querySelectorAll('.product-details');
+    const productViewList = div.querySelectorAll('.product-view-details');
     productViewList.forEach(productView => {
         productView.onclick = function(e){
             e.preventDefault();
@@ -79,6 +76,8 @@ const setClickEventProductListView = (div) => {
 }
 
 const viewProductDetail = (div,d) => {
+    const previousDiv = div.previousElementSibling;
+    previousDiv.style.display = 'none';
     const baseUrl = document.location.origin;
     const html = `<div class="d-flex justify-content-center">
         <div class="product-details-view">

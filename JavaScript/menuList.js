@@ -6,10 +6,10 @@
     fetch('../Json/menu.json').then(res => res.json()).then(d => {
         d && d.forEach((mn,i) => {
             if(i<7){
-                html += `<li class="product-click fs-5" data-category="${mn.category || 'dior'}">${mn.name ? mn.name : ''}</li>`;
+                html += `<li class="product-click fs-5" data-category="${mn.category || 'home'}">${mn.name ? mn.name : ''}</li>`;
             }
             else{
-                moreMenu += `<li class="product-click fs-5" data-category="${mn.category || 'dior'}">${mn.name || ''}</li>`;
+                moreMenu += `<li class="product-click fs-5" data-category="${mn.category || 'home'}">${mn.name || ''}</li>`;
             }
         });
 

@@ -1,141 +1,52 @@
 {
-    "all": {
-        "dior": [
-            {
-                "id":"1",
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$",
-                "brand":"dior"
-            }
-        ],
-        "koko": [
-            {
-                "id":"2",
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$",
-                "brand":"dior"
-            }
-        ]
-    },
-    "cosmectic": {
-        "dior": [
-            {
-                "id":"3",
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$",
-                "brand":"dior"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            }
-        ],
-        "ggg": [
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$",
-                "brand":"dior"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            },
-            {
-                "image_url":"/Images/productImage/test.avif",
-                "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-                "price":"33.35$"
-            }
-        ]
-    },
-    "makeup": {
-        "dior": []
-    },
-    "skin_care": {
-        "dior": []
-    },
-    "body_care": {
-        "dior": [],
-        "ggg": []
-    }
+    "home": [
+        {
+            "image_url":"/Images/productImage/test.avif",
+            "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
+            "price":"33.35$",
+            "brand":"dior"
+        },
+        {
+            "image_url":"/Images/productImage/test.avif",
+            "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
+            "price":"33.35$",
+            "brand":"dior"
+        },
+        {
+            "image_url":"/Images/productImage/test.avif",
+            "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
+            "price":"33.35$",
+            "brand":"dior"
+        },
+        {
+            "image_url":"/Images/productImage/test.avif",
+            "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
+            "price":"33.35$",
+            "brand":"dior"
+        }
+    ],
+    "make_up": [
+        {
+            "image_url":"/Images/productImage/test.avif",
+            "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
+            "price":"33.35$",
+            "brand":"dior"
+        }
+    ],
+    "skin_care": [
+        {
+            "image_url":"/Images/productImage/test.avif",
+            "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
+            "price":"33.35$",
+            "brand":"dior"
+        }
+    ],
+    "body_care": [
+        {
+            "image_url":"/Images/productImage/test.avif",
+            "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
+            "price":"33.35$",
+            "brand":"dior"
+        }
+    ]
 }
