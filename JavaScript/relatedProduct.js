@@ -100,10 +100,11 @@ const renderModelBody = (modal) => {
                             </div>
                         </div>
                         <div class="d-grid mt-3">
-                            <button class="btn btn-sm btn-primary fw-bold" type="button">Login</button>
+                            <button class="btn-save btn btn-sm btn-primary fw-bold" type="button">Login</button>
                         </div>
                     </form>`;
                     modalBody.innerHTML = html;
+                    setBtnSave(modalBody);
                     break;
                 case 'register':
                     html = `<form class="d-flex gap-3 flex-column" method="POST" autocomplete="off" enctype="multipart/form-data">
@@ -124,10 +125,11 @@ const renderModelBody = (modal) => {
                             <input type="password" class="form-control data-input" name="password"/>
                         </div>
                         <div class="d-grid">
-                            <button class="btn btn-sm btn-success fw-bold" type="button">Register</button>
+                            <button class="btn-save btn btn-sm btn-success fw-bold" type="button">Register</button>
                         </div>
                     </form>`;
                     modalBody.innerHTML = html;
+                    setBtnSave(modalBody);
                     break;
                 default:
                     break;
@@ -135,4 +137,22 @@ const renderModelBody = (modal) => {
         }
     });
     tabList[0].dispatchEvent(new Event('click'));
+}
+
+const getDataForm = (div) => {
+    let p = {};
+    div.querySelectorAll('.data-input').forEach(el => {
+        const f = el.name;
+        p[f] = el.value;
+    });
+    return p;
+}
+
+const setBtnSave = (div) => {
+    const btnSave = div.querySelector('.btn-save');
+    btnSave.onclick = function(e){
+        e.preventDefault();
+        const p = getDataForm(div);
+        console.log(p);
+    }
 }
