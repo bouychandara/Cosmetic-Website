@@ -21,10 +21,13 @@
                 </div>
             </li>`;
         }
-        self.innerHTML = `<ul>${html}</ul>`;
-        if(moreMenu)
-            displayMenuBox(self);
-        setClickEvent(self);
+        
+        if(self){
+            self.innerHTML = `<ul>${html}</ul>`;
+            if(moreMenu)
+                displayMenuBox(self);
+            setClickEvent(self);
+        }
     }).catch(error => {
         console.error('Error:', error);
     });

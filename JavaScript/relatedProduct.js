@@ -10,7 +10,7 @@ const renderRelatedProduct = (div,relate) => {
         let html = '';
 
         (data || []).forEach(re => {
-            html += `<div class="card-product product-details" data-id="${re.id || 1}">
+            html += `<div class="card-product product-view-details" data-id="${re.id || 1}">
                 <div class="w-100">
                     <img class="product-show" src="${baseUrl+re.image_list[0] || ''}" alt=""/>
                 </div>
@@ -155,4 +155,28 @@ const setBtnSave = (div) => {
         const p = getDataForm(div);
         console.log(p);
     }
+}
+
+const offCanvas = () => {
+    const offcanvas_id = 'off_canvas_right';
+    const previousOffCanvas = document.getElementById(offcanvas_id);
+    if(previousOffCanvas) previousOffCanvas.remove();
+
+    const html = `<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="${offcanvas_id}" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Product Booked</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div id="${offcanvas_id}_body" class="offcanvas-body"></div>
+    </div>`;
+    document.body.insertAdjacentHTML("afterbegin",html);
+    new bootstrap.Offcanvas(`#${offcanvas_id}`,{
+        backdrop: 'static'
+    }).show();
+    const offCanvas = document.getElementById(offcanvas_id);
+    offCanvas.addEventListener('hidden.bs.offcanvas',function(){
+        this.remove();
+        document.body.removeAttribute('class');
+        document.body.removeAttribute('style');
+    });
 }

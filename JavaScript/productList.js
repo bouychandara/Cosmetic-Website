@@ -11,9 +11,6 @@ const renderBrandList = (d) => {
             <div class="w-100 px-2 mt-1">
                 <p class="text-dark limit-line">${brand.title || ''}</p>
             </div>
-            <div class="w-100 px-2 mt-2">
-                <p class="text-dark fs-5">Price: ${brand.price || ''}</p>
-            </div>
         </div>`;
     });
     html = `<div class="d-flex flex-wrap gap-2 justify-content-around mb-3">${html}</div>`;
@@ -111,7 +108,7 @@ const viewProductDetail = (div,d) => {
                         </button>
                     </div>
                     <div class="d-block">
-                        <button class="btn btn-sm btn-primary btn-get-product">Get Product</button>
+                        <button class="btn btn-sm btn-primary btn-get-product" data-id="${d.id || 0}">Get Product</button>
                     </div>
                 </div>
             </div>
@@ -185,6 +182,7 @@ const viewProductImage = (index,length,div,d=[]) => {
     return index;
 }
 
+let productList = [];
 const setBookingProduct = (div) => {
     const btnDecrement = div.querySelector('.btn-decrement'),
     btnIncrement = div.querySelector('.btn-increment'),
@@ -215,6 +213,50 @@ const setBookingProduct = (div) => {
 
     getProduct.onclick = function(e){
         e.preventDefault();
-        modelDialog();
+        const productId = this.dataset.id;
+        fetch('../Json/login.json').then(res => res.json()).then(d => {
+            d.forEach(user => {
+                if((user.login_name == 'peter') && (user.password == '123456'))
+                {
+                    if(!productList[0]){
+                        productList.push(productId);
+                        Swal.fire({
+                            position: "top-end",
+                            icon: "success",
+                            title: "Your product has been saved",
+                            showConfirmButton: false,
+                            timer: 1500,
+                            width:350
+                        });
+                    }
+                    else{
+                        const exist = productList.includes(productId);
+                        if(exist){
+                            Swal.fire({
+                                title: "Product Already Exist!",
+                                icon: "warning",
+                                width: 400
+                            });
+                        }
+                        else{
+                            productList.push(productId);
+                            Swal.fire({
+                                position: "top-end",
+                                icon: "success",
+                                title: "Your product has been saved",
+                                showConfirmButton: false,
+                                timer: 1500,
+                                width: 350
+                            });
+                        }
+                    }
+                }
+                else{
+                    modelDialog();
+                }
+            });
+        }).catch(err => {
+            console.log(err);
+        });
     }
 }
