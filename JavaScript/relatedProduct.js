@@ -162,7 +162,7 @@ const offCanvas = () => {
     const previousOffCanvas = document.getElementById(offcanvas_id);
     if(previousOffCanvas) previousOffCanvas.remove();
 
-    const html = `<div class="offcanvas offcanvas-end" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="${offcanvas_id}" aria-labelledby="offcanvasRightLabel">
+    const html = `<div class="offcanvas offcanvas-end" data-bs-backdrop="false" tabindex="-1" id="${offcanvas_id}" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title">Product Booked</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -188,21 +188,29 @@ const renderBodyOffCanvas = (div,id) => {
     let html = '';
     if(productBookedList[0]){
         productBookedList.forEach(d => {
-            html += `<div class="d-flex align-items-end gap-2">
+            html += `<div class="d-flex align-items-end gap-2 shadow-sm rounded-3 p-2 border position-relative">
                 <div class="container-product-image">
                     <img class="img-thumbnail object-fit-scale w-100 h-100" src="${baseUrl+d.image_list[0]}" alt="product-image"/>
                 </div>
-                <div class="d-flex align-items-center w-75">
-                    <button class="btn-decrement btn btn-sm btn-outline-danger" type="button">
-                        <i class="fa-solid fa-minus fs-5"></i>
-                    </button>
-                    <div class="d-flex justify-content-center align-items-center p-1 border border-primary flex-grow-1">
-                        <p class="p-0 m-0">Qty: </p>
-                        <p class="p-0 m-0 fw-bold ps-2">1</p>
+                <div class="d-flex align-items-stretch flex-column w-75 h-100">
+                    <div class="d-flex justify-content-center h-100">
+                        <p class="p-0 m-0 fs-5 fw-semibold">${d.title || ''}</p>
                     </div>
-                    <button class="btn-increment btn btn-sm btn-outline-success" type="button">
-                        <i class="fa-solid fa-plus fs-5"></i>
-                    </button>
+                    <div class="d-flex justify-content-center align-items-center w-100">
+                        <button class="btn-decrement btn btn-sm btn-outline-danger" type="button">
+                            <i class="fa-solid fa-minus fs-5"></i>
+                        </button>
+                        <div class="d-flex justify-content-center align-items-center p-1 border border-primary flex-grow-1 rounded-3">
+                            <p class="p-0 m-0">Qty: </p>
+                            <p class="p-0 m-0 fw-bold ps-2">1</p>
+                        </div>
+                        <button class="btn-increment btn btn-sm btn-outline-success" type="button">
+                            <i class="fa-solid fa-plus fs-5"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="btn-delete p-2 position-absolute top-0 end-0 bg-dark bg-opacity-25 rounded-3" role="button" data-id="${d.id || 0}">
+                    <i class="fa-regular fa-trash-can fs-5 text-danger"></i>
                 </div>
             </div>`;
         });
@@ -213,7 +221,8 @@ const renderBodyOffCanvas = (div,id) => {
 
 const setEventToOffCanvas = (div) => {
     const btnIncrementList = div.querySelectorAll('.btn-increment'),
-    btnDecrementList = div.querySelectorAll('.btn-decrement');
+    btnDecrementList = div.querySelectorAll('.btn-decrement'),
+    btnDeleteList = div.querySelectorAll('.btn-delete');
 
     btnIncrementList.forEach(btn => {
         btn.onclick = function(e){
@@ -230,6 +239,21 @@ const setEventToOffCanvas = (div) => {
             if(parseInt(qty.textContent) > 1){
                 qty.textContent = parseInt(qty.textContent) - 1;
             }
+        }
+    });
+
+    btnDeleteList.forEach(btn => {
+        btn.onclick = function(e){
+            e.preventDefault();
+            const id = this.dataset.id;
+            const parent = this.parentElement;
+            parent.remove();
+            productList = productList.filter(item => item !== id);
+            fetch('../Json/productDetails.json').then(res => res.json()).then(d => {
+                productBookedList = d.filter(value => productList.includes(value.id));
+            }).catch(err => {
+                console.log(err);
+            });
         }
     });
 }
