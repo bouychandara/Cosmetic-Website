@@ -167,7 +167,7 @@ const offCanvas = () => {
             <h5 class="offcanvas-title">Product Booked</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
-        <div id="${offcanvas_id}_body" class="offcanvas-body"></div>
+        <div id="${offcanvas_id}_body" class="offcanvas-body d-flex flex-column gap-2"></div>
     </div>`;
     document.body.insertAdjacentHTML("afterbegin",html);
     new bootstrap.Offcanvas(`#${offcanvas_id}`,{
@@ -179,4 +179,22 @@ const offCanvas = () => {
         document.body.removeAttribute('class');
         document.body.removeAttribute('style');
     });
+    if(offCanvas) renderBodyOffCanvas(offCanvas,offcanvas_id);
+}
+
+const renderBodyOffCanvas = (div,id) => {
+    const offCanvasBody = div.querySelector(`#${id}_body`),
+    baseUrl = window.location.origin;
+    let html = '';
+    if(productBookedList[0]){
+        productBookedList.forEach(d => {
+            html += `<div class="d-flex align-items-center">
+                <div class="container-product-image">
+                    <img class="img-thumbnail object-fit-scale w-100 h-100" src="${baseUrl+d.image_list[0]}" alt="product-image"/>
+                </div>
+                <div class="d-flex align-items-center"></div>
+            </div>`;
+        });
+        offCanvasBody.innerHTML = html;
+    }
 }

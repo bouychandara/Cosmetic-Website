@@ -327,3 +327,9 @@ body{
 .swal2-title{
     font-size:1.2rem;
 }
+
+.container-product-image{
+    width:100px;
+    height:100px;
+    position: relative;
+}

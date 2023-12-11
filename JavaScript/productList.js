@@ -182,7 +182,8 @@ const viewProductImage = (index,length,div,d=[]) => {
     return index;
 }
 
-let productList = [];
+let productList = [],
+productBookedList = [];
 const setBookingProduct = (div) => {
     const btnDecrement = div.querySelector('.btn-decrement'),
     btnIncrement = div.querySelector('.btn-increment'),
@@ -250,6 +251,11 @@ const setBookingProduct = (div) => {
                             });
                         }
                     }
+                    fetch('../Json/productDetails.json').then(res => res.json()).then(d => {
+                        productBookedList = d.filter(value => productList.includes(value.id));
+                    }).catch(err => {
+                        console.log(err);
+                    });
                 }
                 else{
                     modelDialog();
