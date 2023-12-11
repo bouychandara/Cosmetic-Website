@@ -188,13 +188,48 @@ const renderBodyOffCanvas = (div,id) => {
     let html = '';
     if(productBookedList[0]){
         productBookedList.forEach(d => {
-            html += `<div class="d-flex align-items-center">
+            html += `<div class="d-flex align-items-end gap-2">
                 <div class="container-product-image">
                     <img class="img-thumbnail object-fit-scale w-100 h-100" src="${baseUrl+d.image_list[0]}" alt="product-image"/>
                 </div>
-                <div class="d-flex align-items-center"></div>
+                <div class="d-flex align-items-center w-75">
+                    <button class="btn-decrement btn btn-sm btn-outline-danger" type="button">
+                        <i class="fa-solid fa-minus fs-5"></i>
+                    </button>
+                    <div class="d-flex justify-content-center align-items-center p-1 border border-primary flex-grow-1">
+                        <p class="p-0 m-0">Qty: </p>
+                        <p class="p-0 m-0 fw-bold ps-2">1</p>
+                    </div>
+                    <button class="btn-increment btn btn-sm btn-outline-success" type="button">
+                        <i class="fa-solid fa-plus fs-5"></i>
+                    </button>
+                </div>
             </div>`;
         });
         offCanvasBody.innerHTML = html;
+        setEventToOffCanvas(offCanvasBody);
     }
+}
+
+const setEventToOffCanvas = (div) => {
+    const btnIncrementList = div.querySelectorAll('.btn-increment'),
+    btnDecrementList = div.querySelectorAll('.btn-decrement');
+
+    btnIncrementList.forEach(btn => {
+        btn.onclick = function(e){
+            e.preventDefault();
+            const qty = this.previousElementSibling.lastElementChild;
+            qty.textContent = parseInt(qty.textContent) + 1;
+        }
+    });
+
+    btnDecrementList.forEach(btn => {
+        btn.onclick = function(e){
+            e.preventDefault(); 
+            const qty = this.nextElementSibling.lastElementChild;
+            if(parseInt(qty.textContent) > 1){
+                qty.textContent = parseInt(qty.textContent) - 1;
+            }
+        }
+    });
 }
