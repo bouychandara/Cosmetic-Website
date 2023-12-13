@@ -5,78 +5,20 @@
     clickSliderDecrement = null,
     clickSliderIncrement = null;
 
-    fetch('../Json/slider.json').then(res => res.json()).then(d => {
-        const length = d.length;
-        self.innerHTML = `<img class="w-100 h-100" src="${baseUrl+d[i].image_url || ''}" alt="${d.title || ''}"/>
-        <div class="d-flex justify-content-between position-absolute w-100 h-100 top-0 set-bg-text-slider">
-            <div class="d-flex align-items-center h-100 ps-2">
-                <div class="click-slider-decrement rounded-3 border border-2 rounded-circle px-3 py-2" role="button">
-                    <i class="fa-solid fa-chevron-left fs-5 text-white"></i>
-                </div>
-            </div>
-            <div class="d-block w-100 h-100">
-                <div class="ms-5 bg-body bg-opacity-50 w-50 p-3 h-100">
-                    <p class="text-primary-emphasis fs-5 fw-bold">${d[i].title || ''}</p>
-                    <p class="text-success-emphasis ps-3 mt-3">${d[i].descriptions || ''}</p>
-                    <button class="btn btn-outline-dark mt-3 float-end" type="button">Explore Now</button>
-                </div>
-            </div>
-            <div class="d-flex align-items-center h-100 pe-3">
-                <div class="click-slider-increment d-flex align-items-center justify-content-center rounded-3 border border-2 rounded-circle px-3 py-2" role="button">
-                    <i class="fa-solid fa-chevron-right fs-5 text-white"></i>
-                </div>
-            </div>
-        </div>`;
-
-        clickSliderDecrement = self.querySelector('.click-slider-decrement'),
-        clickSliderIncrement = self.querySelector('.click-slider-increment'),
-        imageElement = self.querySelector('.img-slider');
-
-        if(clickSliderDecrement){
-            clickSliderDecrement.onclick = function(e){
-                e.preventDefault();
-                if(i > 0){
-                    i--;
-                    if(imageElement)
-                        imageElement.src = (baseUrl+d[i].image_url);
-                }
-                else{
-                    i = (length-1);
-                    if(imageElement)
-                        imageElement.src = (baseUrl+d[i].image_url);
-                }
-            }
-        }
-
-        if(clickSliderIncrement){
-            clickSliderIncrement.onclick = function(e){
-                e.preventDefault();
-                if(i < (length-1)){
-                    i = i+1;
-                    if(imageElement)
-                        imageElement.src = (baseUrl+d[i].image_url);
-                }
-                else{
-                    i = 0;
-                    if(imageElement)
-                        imageElement.src = (baseUrl+d[i].image_url);
-                }
-            }
-        }
-
-        setInterval(() => {
-            if(i === length) i = 0;
-            self.innerHTML = `<img class="img-slider w-100 h-100" src="${baseUrl+d[i].image_url || ''}" alt="${d.title || ''}"/>
+    if(self){
+        fetch('../Json/slider.json').then(res => res.json()).then(d => {
+            const length = d.length;
+            self.innerHTML = `<img class="w-100 h-100" src="${baseUrl+d[i].image_url || ''}" alt="${d.title || ''}"/>
             <div class="d-flex justify-content-between position-absolute w-100 h-100 top-0 set-bg-text-slider">
                 <div class="d-flex align-items-center h-100 ps-2">
-                    <div class="click-slider-decrement d-flex align-items-center justify-content-center rounded-3 border border-2 rounded-circle px-3 py-2" role="button">
+                    <div class="click-slider-decrement rounded-3 border border-2 rounded-circle px-3 py-2" role="button">
                         <i class="fa-solid fa-chevron-left fs-5 text-white"></i>
                     </div>
                 </div>
                 <div class="d-block w-100 h-100">
                     <div class="ms-5 bg-body bg-opacity-50 w-50 p-3 h-100">
                         <p class="text-primary-emphasis fs-5 fw-bold">${d[i].title || ''}</p>
-                        <p class="text-success-emphasis ps-3 mt-3 limited-description">${d[i].descriptions || ''}</p>
+                        <p class="text-success-emphasis ps-3 mt-3">${d[i].descriptions || ''}</p>
                         <button class="btn btn-outline-dark mt-3 float-end" type="button">Explore Now</button>
                     </div>
                 </div>
@@ -86,38 +28,98 @@
                     </div>
                 </div>
             </div>`;
-            i++;
+
             clickSliderDecrement = self.querySelector('.click-slider-decrement'),
             clickSliderIncrement = self.querySelector('.click-slider-increment'),
             imageElement = self.querySelector('.img-slider');
 
-            clickSliderDecrement.onclick = function(e){
-                e.preventDefault();
-                if(i > 0){
-                    i--;
-                    if(imageElement)
-                        imageElement.src = baseUrl+d[i].image_url;
-                }
-                else{
-                    i = (length-1);
-                    if(imageElement)
-                        imageElement.src = baseUrl+d[i].image_url;
+            if(clickSliderDecrement){
+                clickSliderDecrement.onclick = function(e){
+                    e.preventDefault();
+                    if(i > 0){
+                        i--;
+                        if(imageElement)
+                            imageElement.src = (baseUrl+d[i].image_url);
+                    }
+                    else{
+                        i = (length-1);
+                        if(imageElement)
+                            imageElement.src = (baseUrl+d[i].image_url);
+                    }
                 }
             }
 
-            clickSliderIncrement.onclick = function(e){
-                e.preventDefault();
-                if(i < (length-1)){
-                    i++;
-                    if(imageElement)
-                        imageElement.src = (baseUrl+d[i].image_url);
-                }
-                else{
-                    i = 0;
-                    if(imageElement)
-                        imageElement.src = (baseUrl+d[i].image_url);
+            if(clickSliderIncrement){
+                clickSliderIncrement.onclick = function(e){
+                    e.preventDefault();
+                    if(i < (length-1)){
+                        i = i+1;
+                        if(imageElement)
+                            imageElement.src = (baseUrl+d[i].image_url);
+                    }
+                    else{
+                        i = 0;
+                        if(imageElement)
+                            imageElement.src = (baseUrl+d[i].image_url);
+                    }
                 }
             }
-        },5000);
-    });
+
+            setInterval(() => {
+                if(i === length) i = 0;
+                self.innerHTML = `<img class="img-slider w-100 h-100" src="${baseUrl+d[i].image_url || ''}" alt="${d.title || ''}"/>
+                <div class="d-flex justify-content-between position-absolute w-100 h-100 top-0 set-bg-text-slider">
+                    <div class="d-flex align-items-center h-100 ps-2">
+                        <div class="click-slider-decrement d-flex align-items-center justify-content-center rounded-3 border border-2 rounded-circle px-3 py-2" role="button">
+                            <i class="fa-solid fa-chevron-left fs-5 text-white"></i>
+                        </div>
+                    </div>
+                    <div class="d-block w-100 h-100">
+                        <div class="ms-5 bg-body bg-opacity-50 w-50 p-3 h-100">
+                            <p class="text-primary-emphasis fs-5 fw-bold">${d[i].title || ''}</p>
+                            <p class="text-success-emphasis ps-3 mt-3 limited-description">${d[i].descriptions || ''}</p>
+                            <button class="btn btn-outline-dark mt-3 float-end" type="button">Explore Now</button>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center h-100 pe-3">
+                        <div class="click-slider-increment d-flex align-items-center justify-content-center rounded-3 border border-2 rounded-circle px-3 py-2" role="button">
+                            <i class="fa-solid fa-chevron-right fs-5 text-white"></i>
+                        </div>
+                    </div>
+                </div>`;
+                i++;
+                clickSliderDecrement = self.querySelector('.click-slider-decrement'),
+                clickSliderIncrement = self.querySelector('.click-slider-increment'),
+                imageElement = self.querySelector('.img-slider');
+
+                clickSliderDecrement.onclick = function(e){
+                    e.preventDefault();
+                    if(i > 0){
+                        i--;
+                        if(imageElement)
+                            imageElement.src = baseUrl+d[i].image_url;
+                    }
+                    else{
+                        i = (length-1);
+                        if(imageElement)
+                            imageElement.src = baseUrl+d[i].image_url;
+                    }
+                }
+
+                clickSliderIncrement.onclick = function(e){
+                    e.preventDefault();
+                    if(i < (length-1)){
+                        i++;
+                        if(imageElement)
+                            imageElement.src = (baseUrl+d[i].image_url);
+                    }
+                    else{
+                        i = 0;
+                        if(imageElement)
+                            imageElement.src = (baseUrl+d[i].image_url);
+                    }
+                }
+            },5000);
+        });
+    }
 })();
