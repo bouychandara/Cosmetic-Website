@@ -1,16 +1,17 @@
 'use strict';
-const renderBrandList = (d) => {
+const renderBrandList = (d=null) => {
+    d = d ? d : {};
     const baseUrl = window.location.origin,
     self = document.getElementById('_main_container');
     let html = '';
 
     (d || []).forEach(brand => {
-        html += `<div class="card-product product-details" data-brand="${brand.brand || 'dior'}">
+        html += `<div class="card-product product-details" data-brand="${brand.brand ? brand.brand : 'dior'}">
             <div class="w-100">
-                <img class="product-show" src="${baseUrl+brand.image_url || ''}" alt="brand-image"/>
+                <img class="product-show" src="${(brand.image_url ? baseUrl+brand.image_url : '') || ''}" alt="brand-image"/>
             </div>
             <div class="w-100 px-2 mt-1">
-                <p class="text-dark limit-line">${brand.title || ''}</p>
+                <p class="text-dark limit-line">${brand.title ? brand.title : ''}</p>
             </div>
         </div>`;
     });
@@ -35,21 +36,22 @@ const setClickEventProductList = (div) => {
     });
 }
 
-const renderProductList = (div,d) => {
+const renderProductList = (div,d=null) => {
+    d = d ? d : {};
     const previousDiv = div.previousElementSibling;
     previousDiv.style.display = 'block';
     const baseUrl = window.location.origin;
     let html = '';
     (d || []).forEach(product => {
-        html += `<div class="card-product product-view-details" data-id="${product.id || 1}">
+        html += `<div class="card-product product-view-details" data-id="${product.id ? product.id : 1}">
             <div class="w-100">
-                <img class="product-show" src="${baseUrl+product.image_url}" alt="product-image"/>
+                <img class="product-show" src="${product.image_url ? baseUrl+product.image_url : ''}" alt="product-image"/>
             </div>
             <div class="w-100 px-2 mt-1">
-                <p class="text-dark limit-line">${product.title}</p>
+                <p class="text-dark limit-line">${product.title ? product.title : ''}</p>
             </div>
             <div class="w-100 px-2 mt-2">
-                <p class="text-dark fs-5">Price: ${product.price}</p>
+                <p class="text-dark fs-5">Price: ${product.price ? product.price : ''}</p>
             </div>
         </div>`;
     });
@@ -73,14 +75,15 @@ const setClickEventProductListView = (div) => {
     });
 }
 
-const viewProductDetail = (div,d) => {
+const viewProductDetail = (div,d=null) => {
+    d = d ? d : {};
     const previousDiv = div.previousElementSibling;
     previousDiv.style.display = 'none';
     const baseUrl = document.location.origin;
     const html = `<div class="d-flex justify-content-center">
         <div class="product-details-view">
             <div class="product-slider w-50 h-100">
-                <img class="product-image w-100 h-100" src="${baseUrl+d.image_list[0] || ''}" alt="product-slider"/>
+                <img class="product-image w-100 h-100" src="${d.image_list ? baseUrl+d.image_list[0] : ''}" alt="product-slider"/>
                 <div class="d-flex justify-content-between position-absolute w-100 h-100 z-1 top-0">
                     <div class="d-flex align-items-center h-100 ps-2">
                         <div class="btn-slider-decrement d-flex align-items-center justify-content-center p-3 rounded-circle border border-1" role="button">
@@ -95,9 +98,9 @@ const viewProductDetail = (div,d) => {
                 </div>
             </div>
             <div class="w-50">
-                <p class="fw-bold fs-5">${d.title || ''}</p>
-                <p class="ps-3 mt-3">${d.descriptions || ''}</p>
-                <p class="fw-bold mt-3">Price: ${d.price || 0}</p>
+                <p class="fw-bold fs-5">${d.title ? d.title : ''}</p>
+                <p class="ps-3 mt-3">${d.descriptions ? d.descriptions : ''}</p>
+                <p class="fw-bold mt-3">Price: ${d.price ? d.price : 0}</p>
                 <div class="d-flex align-items-center gap-2 mt-3 flex-wrap">
                     <div class="d-flex gap-1 align-items-center">
                         <button class="btn btn-sm btn-outline-danger btn-decrement">
@@ -109,7 +112,7 @@ const viewProductDetail = (div,d) => {
                         </button>
                     </div>
                     <div class="d-block">
-                        <button class="btn btn-sm btn-primary btn-get-product" data-id="${d.id || 0}">Get Product</button>
+                        <button class="btn btn-sm btn-primary btn-get-product" data-id="${d.id ? d.id : 0}">Get Product</button>
                     </div>
                 </div>
             </div>
@@ -119,9 +122,9 @@ const viewProductDetail = (div,d) => {
     const containerSlider = div.querySelector('.product-slider');
     let i = 0;
     setInterval(() => {
-        if(i === d.image_list.length) i = 0;
+        if(i === ((d.image_list && d.image_list.length) || 0)) i = 0;
         if(d.image_list && d.image_list[0]){
-            containerSlider.innerHTML = `<img class="product-image w-100 h-100" src="${baseUrl+d.image_list[i] || ''}" alt="product-slider"/>
+            containerSlider.innerHTML = `<img class="product-image w-100 h-100" src="${d.image_list ? baseUrl+d.image_list[i] : ''}" alt="product-slider"/>
             <div class="d-flex justify-content-between position-absolute w-100 h-100 z-1 top-0">
                 <div class="d-flex align-items-center h-100 ps-2">
                     <div class="btn-slider-decrement d-flex align-items-center justify-content-center p-3 rounded-circle border border-1" role="button">
@@ -136,11 +139,11 @@ const viewProductDetail = (div,d) => {
             </div>`;
         }
         i++;
-        i = viewProductImage(i,d.image_list.length,div.firstChild,d.image_list);
+        i = viewProductImage(i,((d.image_list && d.image_list.length) || 0),div.firstChild,d.image_list);
     },2000);
     renderRelatedProduct(div,d.relate);
     setBookingProduct(div);
-    i = viewProductImage(i,d.image_list.length,div.firstChild,d.image_list);
+    i = viewProductImage(i,((d.image_list && d.image_list.length) || 0),div.firstChild,d.image_list);
 }
 
 const viewProductImage = (index,length,div,d=[]) => {

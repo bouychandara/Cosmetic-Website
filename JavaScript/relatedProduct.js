@@ -197,7 +197,7 @@ const renderBodyOffCanvas = (div,id) => {
         productBookedList.forEach(d => {
             html += `<div class="d-flex align-items-end gap-2 shadow-sm rounded-3 p-2 border position-relative">
                 <div class="container-product-image">
-                    <img class="img-thumbnail object-fit-scale w-100 h-100" src="${baseUrl+d.image_list[0]}" alt="product-image"/>
+                    <img class="img-thumbnail object-fit-scale w-100 h-100" src="${baseUrl+((d.image_list && d.image_list[0]) || '/Images/Dior/a1.jpg')}" alt="product-image"/>
                 </div>
                 <div class="d-flex align-items-stretch flex-column w-75 h-100">
                     <div class="d-flex justify-content-center h-100">
