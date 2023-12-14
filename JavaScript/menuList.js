@@ -53,7 +53,7 @@ const setClickEvent = (div) => {
     const menuList = div.querySelectorAll('.product-click');
     let previousElement = null;
     menuList.forEach(menu => {
-        menu.onclick = function(e){
+        menu.addEventListener('click',function(e){
             e.preventDefault();
             if(previousElement){
                 previousElement.classList.remove('active');
@@ -67,7 +67,7 @@ const setClickEvent = (div) => {
             }).catch(error => {
                 console.log('Error: ',error);
             });
-        }
+        });
     });
     menuList[0].dispatchEvent(new Event('click'));
 }
