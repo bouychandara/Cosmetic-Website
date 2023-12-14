@@ -7,7 +7,7 @@ const renderBrandList = (d) => {
     (d || []).forEach(brand => {
         html += `<div class="card-product product-details" data-brand="${brand.brand || 'dior'}">
             <div class="w-100">
-                <img class="product-show" src="${baseUrl+brand.image_url || ''}" alt=""/>
+                <img class="product-show" src="${baseUrl+brand.image_url || ''}" alt="brand-image"/>
             </div>
             <div class="w-100 px-2 mt-1">
                 <p class="text-dark limit-line">${brand.title || ''}</p>
@@ -43,7 +43,7 @@ const renderProductList = (div,d) => {
     (d || []).forEach(product => {
         html += `<div class="card-product product-view-details" data-id="${product.id || 1}">
             <div class="w-100">
-                <img class="product-show" src="${baseUrl+product.image_url}" alt=""/>
+                <img class="product-show" src="${baseUrl+product.image_url}" alt="product-image"/>
             </div>
             <div class="w-100 px-2 mt-1">
                 <p class="text-dark limit-line">${product.title}</p>
@@ -137,7 +137,7 @@ const viewProductDetail = (div,d) => {
         }
         i++;
         i = viewProductImage(i,d.image_list.length,div.firstChild,d.image_list);
-    },5000);
+    },2000);
     renderRelatedProduct(div,d.relate);
     setBookingProduct(div);
     i = viewProductImage(i,d.image_list.length,div.firstChild,d.image_list);

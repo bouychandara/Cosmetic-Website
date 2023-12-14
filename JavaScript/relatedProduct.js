@@ -13,7 +13,7 @@ const renderRelatedProduct = (div,relate) => {
         (data || []).forEach(re => {
             html += `<div class="card-product product-view-details" data-id="${re.id || 1}">
                 <div class="w-100">
-                    <img class="product-show" src="${baseUrl+re.image_list[0] || ''}" alt=""/>
+                    <img class="product-show" src="${baseUrl+re.image_list[0] || ''}" alt="product-image"/>
                 </div>
                 <div class="w-100 px-2 mt-1">
                     <p class="text-dark limit-line">${re.title || ''}</p>
@@ -165,7 +165,10 @@ const offCanvas = () => {
 
     const html = `<div class="offcanvas offcanvas-end" data-bs-backdrop="false" tabindex="-1" id="${offcanvas_id}" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title">Product Booked</h5>
+            <div class="d-flex gap-2">
+                <h5 class="offcanvas-title">Product Booked</h5>
+                <button class="btn-order btn btn-sm btn-outline-success rounded-4" type="button">Order Now</button>
+            </div>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div id="${offcanvas_id}_body" class="offcanvas-body d-flex flex-column gap-2"></div>
@@ -180,7 +183,10 @@ const offCanvas = () => {
         document.body.removeAttribute('class');
         document.body.removeAttribute('style');
     });
-    if(offCanvas) renderBodyOffCanvas(offCanvas,offcanvas_id);
+    if(offCanvas){
+        renderBodyOffCanvas(offCanvas,offcanvas_id);
+        setOrderEvent(offCanvas);
+    }
 }
 
 const renderBodyOffCanvas = (div,id) => {
@@ -257,4 +263,25 @@ const setEventToOffCanvas = (div) => {
             });
         }
     });
+}
+
+const setOrderEvent = (div) => {
+    const btnOrder = div.querySelector('.btn-order');
+    btnOrder.onclick = function(e){
+        e.preventDefault();
+        if(productBookedList.length > 0){
+            Swal.fire({
+                title: "Product Ordered Successfully!",
+                icon: "success",
+                width: 400
+            });
+        }
+        else{
+            Swal.fire({
+                title: "Get a product before order!",
+                icon: 'warning',
+                width: 350
+            });
+        }
+    }
 }

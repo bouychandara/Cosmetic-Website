@@ -18,7 +18,7 @@
                     </div>
                 </div>
                 <div class="d-block w-100 h-100">
-                    <div class="ms-5 bg-body bg-opacity-50 w-50 p-3 h-100">
+                    <div class="ms-5 bg-body bg-opacity-50 w-50 w-md-75 p-3 h-100">
                         <p class="text-primary-emphasis fs-5 fw-bold">${d[i].title || ''}</p>
                         <p class="text-success-emphasis ps-3 mt-3">${d[i].descriptions || ''}</p>
                         <button class="btn btn-outline-dark mt-3 float-end" type="button">Explore Now</button>
@@ -121,7 +121,7 @@
                             imageElement.src = (baseUrl+d[i].image_url);
                     }
                 }
-            },5000);
+            },2000);
         });
     }
 })();
