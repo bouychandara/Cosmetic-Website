@@ -19,14 +19,14 @@ body{
 
 .height-top-sticky{
     height:60px;
-    background-color:#9852afe3;
+    background-color:rgb(197, 154, 154);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding:0.7rem 1rem;
     position: sticky;
     top:0;
-    z-index: 10;
+    z-index: 1000;
 }
 
 .image-logo{
@@ -77,7 +77,7 @@ body{
     height:60px;
     position: sticky;
     top:60px;
-    background-color:#ffcfcf;
+    background-color: #fff;
     font-family: 'Poppins';
     z-index: 9;
 }
@@ -99,8 +99,8 @@ body{
 
 .menus-list > ul > li.active,
 .menus-list > ul > li:hover{
-    background-color:#2f87eb;
-    color:#fff;
+    /* background-color:#2f87eb; */
+    color: rgb(197, 154, 154);
     vertical-align: middle;
 }
 
@@ -273,7 +273,7 @@ body{
 }
 
 .slider-list{
-    height:250px;
+    /* height:250px; */
     width:100%;
     padding: 0 3px;
     position:relative;
