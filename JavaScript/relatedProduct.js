@@ -201,7 +201,7 @@ const renderBodyOffCanvas = (div,id) => {
                 </div>
                 <div class="d-flex align-items-stretch flex-column w-75 h-100">
                     <div class="d-flex justify-content-center h-100">
-                        <p class="p-0 m-0 fs-5 fw-semibold">${d.title || ''}</p>
+                        <p class="p-0 m-0 fw-semibold w-75 text-center">${d.title || ''}</p>
                     </div>
                     <div class="d-flex justify-content-center align-items-center w-100">
                         <button class="btn-decrement btn btn-sm btn-outline-danger" type="button">
