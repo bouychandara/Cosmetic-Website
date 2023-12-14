@@ -1,25 +1,25 @@
 {
     "home": [
         {
-            "image_url":"/Images/productImage/test.avif",
-            "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
+            "image_url":"/Images/brands/3ce.jpg",
+            "title":"3CE Brand",
             "price":"33.35$",
+            "brand":"3ce"
+        },
+        {
+            "image_url":"/Images/brands/dior.png",
+            "title":"DIOR",
             "brand":"dior"
         },
         {
-            "image_url":"/Images/productImage/test.avif",
-            "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-            "brand":"dior"
+            "image_url":"/Images/brands/mac.png",
+            "title":"MAC Brand",
+            "brand":"mac"
         },
         {
-            "image_url":"/Images/productImage/test.avif",
-            "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-            "brand":"dior"
-        },
-        {
-            "image_url":"/Images/productImage/test.avif",
-            "title":"Unlock this file and get unlimited access to over 93,857,000 Premium assets",
-            "brand":"dior"
+            "image_url":"/Images/brands/Sk-II.jpg",
+            "title":"SK-II Brand",
+            "brand":"sk-II"
         }
     ],
     "make_up": [

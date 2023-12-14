@@ -2,57 +2,57 @@
     {
         "id":"1",
         "image_list": [
-            "/Images/productImage/test.avif",
-            "/Images/productImage/product_test.jpg",
-            "/Images/productImage/test.avif"
+            "/Images/Dior/a1.jpg",
+            "/Images/Dior/a1.jpg",
+            "/Images/Dior/m2.png"
         ],
-        "title":"dfghjkl",
-        "descriptions":"dfghjklsdfghjkdfhgdjhfjehj",
+        "title":"3CE Professional Makeup",
+        "descriptions":"No more framed, 3CE new take",
         "price":"366$",
-        "relate":"perfume"
+        "relate":"skincare"
     },
     {
         "id":"2",
         "image_list": [
-            "/Images/productImage/test.avif",
-            "/Images/productImage/product_test.jpg"
+            "/Images/Dior/s2.png",
+            "/Images/3CE/m51.png"
         ],
-        "title":"dfghjkl",
-        "descriptions":"dfghjkl;",
+        "title":"3CE Professional Makeup",
+        "descriptions":"It claims to be a product that helps in oil-water balance , that helps achieve a clear milky radiant skin with zero tightness and sooth sunburns.Also restore skin and dead cells",
         "price":"366$",
-        "relate":"perfume"
+        "relate":"skincare"
     },
     {
         "id":"3",
         "image_list": [
-            "/Images/productImage/test.avif",
-            "/Images/productImage/product_test.jpg"
+            "/Images/3CE/m5.png",
+            "/Images/3CE/m7.png"
         ],
-        "title":"dfghjkl",
-        "descriptions":"dfghjkl;",
+        "title":"Capture Youth",
+        "descriptions":"No more framed, Dior new take",
         "price":"$366",
-        "relate":"perfume"
+        "relate":"skincare"
     },
     {
         "id":"4",
         "image_list": [
-            "/Images/productImage/test.avif",
-            "/Images/productImage/product_test.jpg"
+            "/Images/Mac/m4.png",
+            "/Images/Mac/s3.png"
         ],
-        "title":"dfghjkl",
-        "descriptions":"dfghjkl;",
+        "title":"WATER COATING",
+        "descriptions":"Cool, pure, and clean light pink that catches the eye Clear and refreshing colors in a lightweight, dewy texture.",
         "price":"$366",
-        "relate":"perfume"
+        "relate":"skincare"
     },
     {
         "id":"5",
         "image_list": [
-            "/Images/productImage/test.avif",
-            "/Images/productImage/product_test.jpg"
+            "/Images/Sk/s16.png",
+            "/Images/Sk/s19.png"
         ],
-        "title":"dfghjkl",
-        "descriptions":"dfghjkl;",
+        "title":"Sk-II Serum",
+        "descriptions":"Organic Anti Aging Anti Acne Face Skin Care Serum Collagen Repair",
         "price":"$366",
-        "relate":"perfume"
+        "relate":"skincare"
     }
 ]
