@@ -1,3 +1,4 @@
+'use strict';
 (function(){
     const self = document.getElementById('_menu_container');
     let html = '',

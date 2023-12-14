@@ -1,3 +1,4 @@
+'use strict';
 const renderRelatedProduct = (div,relate) => {
     const baseUrl = window.location.origin;
     fetch('../Json/productDetails.json').then(res => res.json()).then(d => {

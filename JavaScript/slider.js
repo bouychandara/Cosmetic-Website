@@ -1,9 +1,11 @@
+'use strict';
 (function(){
     const baseUrl = window.location.origin,
     self = document.getElementById('_slider_container');
     let i = 0,
     clickSliderDecrement = null,
-    clickSliderIncrement = null;
+    clickSliderIncrement = null,
+    imageElement = null;
 
     if(self){
         fetch('../Json/slider.json').then(res => res.json()).then(d => {

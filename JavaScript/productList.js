@@ -1,3 +1,4 @@
+'use strict';
 const renderBrandList = (d) => {
     const baseUrl = window.location.origin,
     self = document.getElementById('_main_container');

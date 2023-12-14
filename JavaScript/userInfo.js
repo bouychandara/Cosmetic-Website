@@ -1,3 +1,4 @@
+'use strict';
 (function(){
     const userObj = document.getElementById('user_info');
     let dropdown;
