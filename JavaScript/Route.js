@@ -3,12 +3,14 @@ const Route = (event) => {
     event = event || window.event;
     event.preventDefault();
     const routeName = event.target.dataset.category.replace(/\_/g,'-');
-    window.history.pushState({},"",routeName);
+    // window.history.pushState({},"",routeName);
 }
 
-const routes = {};
+const routes = {
+    "/HTML/body-care": "/HTML/",
+};
 
-const handleLocation = async (routeName) => {
+const handleLocation = () => {
     const path = window.location.pathname;
 }
 
