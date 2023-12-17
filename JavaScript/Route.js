@@ -1,12 +1,15 @@
 'use strict';
-(function(){
-    const containerMenu = document.getElementById('_menu_container');
-    if(containerMenu){
-        containerMenu.querySelectorAll('.product-click').forEach(btn => {
-            btn.addEventListener('click',function(e){
-                e.preventDefault();
-                console.log(this);
-            });
-        });
-    }
-})();
+const Route = (event) => {
+    event = event || window.event;
+    event.preventDefault();
+    const routeName = event.target.dataset.category.replace(/\_/g,'-');
+    window.history.pushState({},"",routeName);
+}
+
+const routes = {};
+
+const handleLocation = async (routeName) => {
+    const path = window.location.pathname;
+}
+
+window.onpopstate = handleLocation;
