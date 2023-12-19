@@ -55,6 +55,7 @@ const setClickEvent = (div) => {
     menuList.forEach(menu => {
         menu.addEventListener('click',function(e){
             e.preventDefault();
+            Route(e);
             if(previousElement){
                 previousElement.classList.remove('active');
             }
