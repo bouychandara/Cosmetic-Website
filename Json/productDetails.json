@@ -2,12 +2,14 @@
     {
         "id":"1",
         "image_list": [
-            "/Images/Dior/a1.jpg"
+            "/Images/Dior/a1.jpg",
+            "/Images/Dior/a1.jpg",
+            "/Images/Dior/m2.png"
         ],
-        "title":"DIOR Addict Lip Glow Oil",
-        "descriptions":"It's enriched with cherry oil for a pampering formula. Featuring a minty-vanilla scent, it nurtures the lips with an immediate and lasting effect. With its Color Reviver technology, Lip Glow Oil reacts directly to the moisture level in each woman's lips for custom color while ensuring continual moisturization.",
-        "price":"$25",
-        "relate":"lipstick"
+        "title":"3CE Professional Makeup",
+        "descriptions":"No more framed, 3CE new take",
+        "price":"366$",
+        "relate":"skincare"
     },
     {
         "id":"2",
