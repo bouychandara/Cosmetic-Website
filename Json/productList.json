@@ -127,111 +127,121 @@
         {
             "id":"21",
             "image_url":"/Images/Mac/m5.png",
-            "title":"Mac Best Cusion",
-            "price":"646.45$"
+            "title":"MAC Studio Fix Complete Coverage ",
+            "price":"20.00$"
         },
         {
             "id":"22",
             "image_url":"/Images/Mac/m4.png",
-            "title":"Mac Tonner",
-            "price":"646.45$"
+            "title":"M∙A∙C Powder Blush",
+            "price":"30.45$"
         },
         {
             "id":"23",
             "image_url":"/Images/Mac/m8.png",
-            "title":"Mac Lip Balms",
-            "price":"646.45$"
+            "title":"MAC Matte Lipstick",
+            "price":"15.45$"
         },
         {
             "id":"24",
             "image_url":"/Images/Mac/m11.png",
-            "title":"Mac Eye Brush",
-            "price":"646.45$"
+            "title":"MAC Mascara Range",
+            "price":"18.00$"
         }
         ,{
             "id":"25",
             "image_url":"/Images/Mac/m20.png",
-            "title":"Mac new Cusion",
-            "price":"646.45$"
+            "title":"MAC Cosmetics Complete Comfort Cream",
+            "price":"18.00$"
         },
         {
             "id":"26",
             "image_url":"/Images/Mac/s17.png",
-            "title":"Mac Toner",
-            "price":"646.45$"
+            "title":"MAC Cosmetics Lightful Toner",
+            "price":"18.00$"
         }
         ,{
             "id":"27",
             "image_url":"/Images/Mac/s19.png",
-            "title":"Mac Natural Foam",
-            "price":"646.45$"
+            "title":"Lightful C³ Clarifying Gel-to-Foam Deep Cleanser",
+            "price":"35.45$"
         },
         {
             "id":"28",
             "image_url":"/Images/Mac/s21.png",
-            "title":"Mac Fix Spray",
-            "price":"646.45$"
+            "title":"Prep + Prime Fix+ Makeup Setting Spray",
+            "price":"20.45$"
         }
         ,{
             "id":"29",
             "image_url":"/Images/Mac/s3.png",
-            "title":"Mac Strop Cream",
-            "price":"646.45$"
+            "title":"MAC Strop Cream",
+            "price":"18.00$"
         },
         {
             "id":"30",
             "image_url":"/Images/Mac/s10.png",
-            "title":"Mac Lightful",
-            "price":"646.45$"
+            "title":"MAC Cosmetics Lightful C3",
+            "price":"25.45$"
         }
     ],
     "sk-II":[
         {
+            "id":"31",
             "image_url":"/Images/Sk/s18.png",
             "title":"SK-II Set Skincare",
-            "price":"646.45$"
+            "price":"25.45$"
         },
         {
+            "id":"32",
             "image_url":"/Images/Sk/s10.png",
             "title":"SK-II Night cream",
             "price":"646.45$"
         },
         {
+            "id":"33",
             "image_url":"/Images/Sk/s9.png",
             "title":"SK-II Foam",
             "price":"646.45$"
         },
         {
+            "id":"34",
             "image_url":"/Images/Sk/s21.png",
             "title":"SK-II Big Set Skincare",
             "price":"646.45$"
         },
         {
+            "id":"35",
             "image_url":"/Images/Sk/s20.png",
             "title":"SK-II Serum",
             "price":"646.45$"
         },
         {
+            "id":"36",
             "image_url":"/Images/Sk/s16.png",
             "title":"SK-II Serum",
             "price":"646.45$"
         },
         {
+            "id":"37",
             "image_url":"/Images/Sk/s19.png",
             "title":"SK-II Big Set Serum",
             "price":"646.45$"
         },
         {
+            "id":"38",
             "image_url":"/Images/Sk/s11.png",
             "title":"SK-II Cream",
             "price":"646.45$"
         },
         {
+            "id":"39",
             "image_url":"/Images/Sk/s15.png",
             "title":"SK-II Serum",
             "price":"646.45$"
         },
         {
+            "id":"40",
             "image_url":"/Images/Sk/s5.png",
             "title":"SK-II Serum",
             "price":"646.45$"

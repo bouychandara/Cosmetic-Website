@@ -204,29 +204,29 @@
         "image_list": [
             "/Images/Mac/m5.png"
         ],
-        "title":"3CE Soft Matte Lipstick Clear Layer Edition ",
-        "descriptions": "With a primer-like matte texture, this tug-free lipstick glides across lips and leaves vivid, seamless color behind. : Rich and sensual color payoff is guaranteed with a single swipe or two. : The creamy and blendable formula ensures an easy gradient lip for various makeup looks.",
-        "price":"$18",
-        "relate":"lipstick"
+        "title":"MAC Studio Fix Complete Coverage ",
+        "descriptions": "A cushion foundation from Mac, delivering full coverage with a 24hr matte finish. The hydrating formula reduces the appearance of fine lines for a flawlessly smooth complexion.",
+        "price":"$20",
+        "relate":"cushion"
     },
     {
         "id":"22",
         "image_list": [
             "/Images/Mac/m4.png"
         ],
-        "title":"3CE Soft Matte Lipstick Clear Layer Edition ",
-        "descriptions": "With a primer-like matte texture, this tug-free lipstick glides across lips and leaves vivid, seamless color behind. : Rich and sensual color payoff is guaranteed with a single swipe or two. : The creamy and blendable formula ensures an easy gradient lip for various makeup looks.",
-        "price":"$18",
-        "relate":"lipstick"
+        "title":"M∙A∙C Powder Blush ",
+        "descriptions": "M·A·C Powder Blush is designed by and for professionals. It's enriched with vitamin E and formulated to provide fantastic colour to cheeks with ease and consistency. Applies evenly, adheres lightly to skin to achieve ",
+        "price":"$30.45",
+        "relate":"blush"
     },
     {
         "id":"23",
         "image_list": [
             "/Images/Mac/m8.png"
         ],
-        "title":"3CE Soft Matte Lipstick Clear Layer Edition ",
-        "descriptions": "With a primer-like matte texture, this tug-free lipstick glides across lips and leaves vivid, seamless color behind. : Rich and sensual color payoff is guaranteed with a single swipe or two. : The creamy and blendable formula ensures an easy gradient lip for various makeup looks.",
-        "price":"$18",
+        "title":"MAC Matte Lipstick ",
+        "descriptions": "M.A.C Lipstick the iconic product that made M.A.C famous. This creamy rich formula features high colour payoff in a no-shine matte finish. Feature Benefits: Highly pigmented lipstick with a long-wearing formula that lasts upto 8 hours.",
+        "price":"$15.45",
         "relate":"lipstick"
     },
     {
@@ -234,69 +234,169 @@
         "image_list": [
             "/Images/Mac/m11.png"
         ],
-        "title":"3CE Soft Matte Lipstick Clear Layer Edition ",
-        "descriptions": "With a primer-like matte texture, this tug-free lipstick glides across lips and leaves vivid, seamless color behind. : Rich and sensual color payoff is guaranteed with a single swipe or two. : The creamy and blendable formula ensures an easy gradient lip for various makeup looks.",
+        "title":"MAC Mascara Range",
+        "descriptions": "Enhancing volume, extending length, creating curl and staying put to the extreme, these highly defined lashes are clump-resistant and non-smudging – and can now withstand moisture. How to use: Press the brush into lashes close to roots and  it through lashes from root to tip.",
         "price":"$18",
-        "relate":"lipstick"
+        "relate":"mascara"
     },
     {
         "id":"25",
         "image_list": [
             "/Images/Mac/m20.png"
         ],
-        "title":"3CE Soft Matte Lipstick Clear Layer Edition ",
-        "descriptions": "With a primer-like matte texture, this tug-free lipstick glides across lips and leaves vivid, seamless color behind. : Rich and sensual color payoff is guaranteed with a single swipe or two. : The creamy and blendable formula ensures an easy gradient lip for various makeup looks.",
+        "title":"MAC Cosmetics Complete Comfort Cream",
+        "descriptions": "Enriched with Shea Butter, Jojoba Oil and Vitamin E, it will moisturise and protect skin to leave it feeling comfortable and hydrated. Water-resistant and non-drying. Formulated with non-comedogenic ingredients. Suitable for all skin types.",
         "price":"$18",
-        "relate":"lipstick"
+        "relate":"cream"
     },
     {
         "id":"26",
         "image_list": [
             "/Images/Mac/s17.png"
         ],
-        "title":"3CE Soft Matte Lipstick Clear Layer Edition ",
-        "descriptions": "With a primer-like matte texture, this tug-free lipstick glides across lips and leaves vivid, seamless color behind. : Rich and sensual color payoff is guaranteed with a single swipe or two. : The creamy and blendable formula ensures an easy gradient lip for various makeup looks.",
+        "title":"MAC Cosmetics Lightful Toner ",
+        "descriptions": "M·A·C (Make-up Art Cosmetics) is the pioneering makeup authority for all. Since its creation in Toronto, Canada, over 30 years ago, the brand's popularity has grown through a tradition of world-of-mouth endorsement from makeup artists, models, photographers and journalists around the world.",
         "price":"$18",
-        "relate":"lipstick"
+        "relate":"toner"
     },
     {
         "id":"27",
         "image_list": [
             "/Images/Mac/s19.png"
         ],
-        "title":"3CE Soft Matte Lipstick Clear Layer Edition ",
-        "descriptions": "With a primer-like matte texture, this tug-free lipstick glides across lips and leaves vivid, seamless color behind. : Rich and sensual color payoff is guaranteed with a single swipe or two. : The creamy and blendable formula ensures an easy gradient lip for various makeup looks.",
-        "price":"$18",
-        "relate":"lipstick"
+        "title":"Lightful C³ Clarifying Gel-to-Foam Deep Cleanser ",
+        "descriptions": "Smooth gel to creamy foam that deep cleanses without stripping the skin. RM190.00",
+        "price":"$35.45",
+        "relate":"foam"
     },
     {
         "id":"28",
         "image_list": [
             "/Images/Mac/s21.png"
         ],
-        "title":"3CE Soft Matte Lipstick Clear Layer Edition ",
+        "title":"Prep + Prime Fix+ Makeup Setting Spray ",
         "descriptions": "With a primer-like matte texture, this tug-free lipstick glides across lips and leaves vivid, seamless color behind. : Rich and sensual color payoff is guaranteed with a single swipe or two. : The creamy and blendable formula ensures an easy gradient lip for various makeup looks.",
-        "price":"$18",
-        "relate":"lipstick"
+        "price":"$20.45",
+        "relate":"toner"
     },
     {
         "id":"29",
         "image_list": [
             "/Images/Mac/s3.png"
         ],
-        "title":"3CE Soft Matte Lipstick Clear Layer Edition ",
-        "descriptions": "With a primer-like matte texture, this tug-free lipstick glides across lips and leaves vivid, seamless color behind. : Rich and sensual color payoff is guaranteed with a single swipe or two. : The creamy and blendable formula ensures an easy gradient lip for various makeup looks.",
+        "title":"MAC Strop Cream ",
+        "descriptions": "Enriched with Shea Butter, Jojoba Oil and Vitamin E, it will moisturise and protect skin to leave it feeling comfortable and hydrated. Water-resistant and non-drying. Formulated with non-comedogenic ingredients. Suitable for all skin types.",
         "price":"$18",
-        "relate":"lipstick"
+        "relate":"cream"
     },
     {
         "id":"30",
         "image_list": [
             "/Images/Mac/s10.png"
         ],
-        "title":"3CE Soft Matte Lipstick Clear Layer Edition ",
-        "descriptions": "With a primer-like matte texture, this tug-free lipstick glides across lips and leaves vivid, seamless color behind. : Rich and sensual color payoff is guaranteed with a single swipe or two. : The creamy and blendable formula ensures an easy gradient lip for various makeup looks.",
-        "price":"$18",
-        "relate":"lipstick"
+        "title":"MAC Cosmetics Lightful C3",
+        "descriptions": "A refreshing and skin-softening watery lotion that instantly hydrates and prepares skin for the skin care products that follow. It softens and moisturizes skin and helps improve the appearance of skin's texture for the optimal healthy look and radiant glow.",
+        "price":"$25.45",
+        "relate":"cream"
+    },
+    {
+        "id":"31",
+        "image_list": [
+            "/Images/Sk/s18.png"
+        ],
+        "title":"SK-II Set Skincare",
+        "descriptions": "A refreshing and skin-softening watery lotion that instantly hydrates and prepares skin for the skin care products that follow. It softens and moisturizes skin and helps improve the appearance of skin's texture for the optimal healthy look and radiant glow.",
+        "price":"$25.45",
+        "relate":"cream"
+    },
+    {
+        "id":"32",
+        "image_list": [
+            "/Images/Sk/s10.png"
+        ],
+        "title":"SK-II Night cream",
+        "descriptions": "A refreshing and skin-softening watery lotion that instantly hydrates and prepares skin for the skin care products that follow. It softens and moisturizes skin and helps improve the appearance of skin's texture for the optimal healthy look and radiant glow.",
+        "price":"$25.45",
+        "relate":"cream"
+    },
+    {
+        "id":"33",
+        "image_list": [
+            "/Images/Sk/s9.png"
+        ],
+        "title":"SK-II Foam",
+        "descriptions": "A refreshing and skin-softening watery lotion that instantly hydrates and prepares skin for the skin care products that follow. It softens and moisturizes skin and helps improve the appearance of skin's texture for the optimal healthy look and radiant glow.",
+        "price":"$25.45",
+        "relate":"foam"
+    },
+    {
+        "id":"34",
+        "image_list": [
+            "/Images/Sk/s21.png"
+        ],
+        "title":"SK-II Big Set Skincare",
+        "descriptions": "A refreshing and skin-softening watery lotion that instantly hydrates and prepares skin for the skin care products that follow. It softens and moisturizes skin and helps improve the appearance of skin's texture for the optimal healthy look and radiant glow.",
+        "price":"$25.45",
+        "relate":"cream"
+    },
+    {
+        "id":"35",
+        "image_list": [
+            "/Images/Sk/s20.png"
+        ],
+        "title":"SK-II Serum",
+        "descriptions": "A refreshing and skin-softening watery lotion that instantly hydrates and prepares skin for the skin care products that follow. It softens and moisturizes skin and helps improve the appearance of skin's texture for the optimal healthy look and radiant glow.",
+        "price":"$25.45",
+        "relate":"serum"
+    },
+    {
+        "id":"36",
+        "image_list": [
+            "/Images/Sk/s16.png"
+        ],
+        "title":"SK-II Serum",
+        "descriptions": "A refreshing and skin-softening watery lotion that instantly hydrates and prepares skin for the skin care products that follow. It softens and moisturizes skin and helps improve the appearance of skin's texture for the optimal healthy look and radiant glow.",
+        "price":"$25.45",
+        "relate":"serum"
+    },
+    {
+        "id":"37",
+        "image_list": [
+            "/Images/Sk/s19.png"
+        ],
+        "title":"SK-II Big Set Serum",
+        "descriptions": "A refreshing and skin-softening watery lotion that instantly hydrates and prepares skin for the skin care products that follow. It softens and moisturizes skin and helps improve the appearance of skin's texture for the optimal healthy look and radiant glow.",
+        "price":"$25.45",
+        "relate":"serum"
+    },
+    {
+        "id":"38",
+        "image_list": [
+            "/Images/Sk/s11.png"
+        ],
+        "title":"SK-II Cream",
+        "descriptions": "A refreshing and skin-softening watery lotion that instantly hydrates and prepares skin for the skin care products that follow. It softens and moisturizes skin and helps improve the appearance of skin's texture for the optimal healthy look and radiant glow.",
+        "price":"$25.45",
+        "relate":"cream"
+    },
+    {
+        "id":"39",
+        "image_list": [
+            "/Images/Sk/s15.png"
+        ],
+        "title":"SK-II Serum",
+        "descriptions": "A refreshing and skin-softening watery lotion that instantly hydrates and prepares skin for the skin care products that follow. It softens and moisturizes skin and helps improve the appearance of skin's texture for the optimal healthy look and radiant glow.",
+        "price":"$25.45",
+        "relate":"serum"
+    },
+    {
+        "id":"40",
+        "image_list": [
+            "/Images/Sk/s5.png"
+        ],
+        "title":"SK-II Serum",
+        "descriptions": "A refreshing and skin-softening watery lotion that instantly hydrates and prepares skin for the skin care products that follow. It softens and moisturizes skin and helps improve the appearance of skin's texture for the optimal healthy look and radiant glow.",
+        "price":"$25.45",
+        "relate":"serum"
     }
 ]
