@@ -1,0 +1,430 @@
+@import url(../CSS//all.min.css);
+@import url(../CSS/bootstrap.css);
+@import url(../CSS/animate.min.css);
+
+:root{
+    --border-radius-lg: 0.5rem;
+    --box-shadow-sm: 0 0.125rem 0.25rem #00000013;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    overflow-x: hidden;
+    position: relative;
+}
+
+.height-top-sticky{
+    height:60px;
+    background-color:rgb(197, 154, 154);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:0.7rem 1rem;
+    position: sticky;
+    top:0;
+    z-index: 1000;
+}
+
+.image-logo{
+    width:50px;
+    height:50px;
+    border-radius: 50%;
+}
+
+.height-bottom-sticky{
+    min-height:180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color:#c59a9a;
+}
+
+.width-div-bottom{
+    width:calc(100%/3);
+    height:90%;
+    padding:1rem;
+}
+
+.company-description{
+    text-wrap: wrap;
+    font-size:1.11em;
+    font-family: 'Poppins';
+    padding:10px 0 0 0;
+    color:#fff;
+    width:80%;
+}
+
+.width-div-bottom > ul{
+    list-style: none;
+}
+
+.width-div-bottom > ul > li{
+    padding:0 0 15px 0;
+}
+
+.social-icon{
+    width:30px;
+    height:30px;
+    cursor: pointer;
+}
+
+.menus-list{
+    width:100%;
+    height:60px;
+    position: sticky;
+    top:60px;
+    background-color: #fff;
+    font-family: 'Poppins';
+    z-index: 9;
+}
+
+.menus-list > ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    height:100%;
+}
+
+.menus-list > ul > li{
+    padding:1rem;
+    height:100%;
+    font-size:1.15rem;
+    font-weight: 500;
+    cursor:pointer;
+}
+
+.menus-list > ul > li.active,
+.menus-list > ul > li:hover{
+    color: rgb(197, 154, 154);
+    vertical-align: middle;
+}
+
+.menus-list > ul > li:last-child:hover > .menus-box-container{
+    color:#000;
+}
+
+.menus-box-container{
+    width:200px;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow: 0 0.5rem 1rem #00000026;
+    background-color: #fff;
+    border-radius: var(--border-radius-lg);
+    position: absolute;
+    z-index: 20;
+    top:60px;
+    right: 0;
+}
+
+.menus-box-container > ul{
+    list-style: none;
+}
+
+.menus-box-container > ul > li:not(li:first-child){
+    padding:0.5rem;
+    border-bottom:1px solid #0000002e;
+}
+
+.menus-box-container > ul > li:first-child{
+    padding:0.5rem;
+    border-bottom:1px solid #0000002e;
+}
+
+.menus-box-container > ul > li:last-child{
+    border-bottom: none !important;
+}
+
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    border-radius: var(--border-radius-lg);
+}
+
+::-webkit-scrollbar-thumb{
+    background-color:#0a30d8a6;
+    border-radius: var(--border-radius-lg);
+}
+
+::-webkit-scrollbar-track {
+    background-color: #fff;
+}
+
+::-webkit-scrollbar{
+    display: block;
+}
+
+.brand-product-list{
+    position: relative;
+    padding:1rem;
+    z-index: 5;
+}
+
+.card-product{
+    width:calc(100%/3);
+    min-width:250px;
+    max-width:260px;
+    background-color:#ededed;
+    border-radius: var(--border-radius-lg);
+    font-family: 'Poppins';
+    box-shadow: var(--box-shadow-sm);
+    cursor: pointer;
+    position:relative;
+    color:#000;
+}
+
+.card-product::after{
+    content: " ";
+    width:100%;
+    height:0;
+    position:absolute;
+    background-color:#00000057;
+    transform: translateY(-100%);
+    border-radius: var(--border-radius-lg);
+}
+
+.card-product:hover::after{
+    content: " ";
+    width:100%;
+    height:100%;
+    position:absolute;
+    background-color:#00000029;
+    transform: translateY(-100%);
+    border-radius: var(--border-radius-lg);
+    transition: height 1s;
+}
+
+.product-show{
+    width:100%;
+    height:50%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    object-fit: contain;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+}
+
+.limit-line-title{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.limit-line{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.limited-description{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.product-details-view{
+    display: flex;
+    width:80%;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow-sm);
+}
+
+.product-details-view > div:last-child{
+    padding: 1rem;
+    background-color: #b3b3b323;
+    border-radius: 0 var(--border-radius-lg) var(--border-radius-lg) 0;
+}
+
+.product-slider{
+    position: relative;
+    height: 300px;
+}
+
+.product-slider img{
+    border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
+}
+
+.btn-increment,
+.btn-decrement{
+    width:60px;
+    height:30px;
+}
+
+.show-product-amount{
+    height:30px;
+    width:150px;
+    border:1px solid #0000006e;
+    outline:none;
+    background-color:#fff;
+    font-size: 1rem;
+    font-weight: 600;
+    padding:0;
+    margin: 0;
+    line-height: 30px;
+    text-align:center;
+}
+
+.brand-section{
+    border-bottom: 2px solid #ff0000;
+    margin-bottom: 10px;
+}
+
+.slider-list{
+    height:300px;
+    width:100%;
+    padding: 0 3px;
+    position:relative;
+    overflow: hidden;
+}
+
+.slider-list > img{
+    object-fit: fill;
+    background-repeat: no-repeat;
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+}
+
+.set-max-width-search{
+    max-width:300px;
+}
+
+.btn-tab{
+    border:1px solid #cfcfcf;
+    outline:none;
+    background-color:transparent;
+    padding:0.3rem 0.5rem;
+    border-bottom: none;
+}
+
+.btn-active{
+    background-color:var(--bs-pink);
+    color:#fff;
+    border:none;
+    outline:none;
+}
+
+.set-bg-text-slider{
+    border:none;
+    outline:none;
+    border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+}
+
+.user-thumbnail{
+    border-radius: 50%;
+    width:100%;
+    height:100%;
+    background-color:#fff;
+}
+
+.username{
+    padding:0;
+    margin:0;
+}
+
+.dropdown-menu-user{
+    position:absolute;
+    width:250px;
+    background-color:#ffffff;
+    z-index:1000;
+    top:45px;
+    right:10px;
+    border-radius: var(--border-radius-lg);
+    padding:0.5rem 0;
+    margin:0;
+}
+
+.list-menu-option > li{
+    padding:0.5rem;
+    color:#000;
+    font-size:1.09em;
+    font-weight:400;
+    height:100%;
+}
+
+.list-menu-option > li:hover{
+    background-color:#00aeff;
+    color:#fff;
+}
+
+.swal2-title{
+    font-size:1.2rem;
+}
+
+.container-product-image{
+    width:100px;
+    height:100px;
+    position: relative;
+}
+
+@media screen and (max-width: 650px){
+    .product-details-view{
+        width:100%;
+        flex-direction: column;
+        height:auto;
+        align-items: center;
+    }
+
+    .product-details-view > div{
+        width:80% !important;
+    }
+
+    .product-details-view > div:first-child img{
+        border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    }
+
+    .product-details-view > div:last-child{
+        border-radius: 0 0 var(--border-radius-lg) var(--border-radius-lg);
+    }
+
+    .w-50{
+        width:80% !important;
+    }
+}
+
+@media screen and (max-width: 576px){
+    .menus-list{
+        overflow-y: hidden;
+        overflow-x: auto;
+    }
+
+    .menus-list > ul{
+        display: flex;
+        column-gap: 10px;
+    }
+
+    .menus-list > ul > li{
+        background-color:#f1f1f1;
+        height: 60%;
+        display: flex;
+        align-items: center;
+        border-radius: var(--bs-border-radius-xxl);
+        -webkit-box-shadow: -2px 3px 5px -5px #000000f7;
+        -moz-box-shadow: -2px 3px 5px -5px #000000f7;
+        box-shadow: -2px 3px 5px -5px #000000f7;
+    }
+
+    .height-bottom-sticky{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .height-bottom-sticky .width-div-bottom{
+        width: 100%;
+    }
+
+    .product-details-view > div{
+        width: 100% !important;
+    }
+}
